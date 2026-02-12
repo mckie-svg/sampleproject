@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glester Senining - Virtual Assistant</title>
+    <link href="./output.css" rel="stylesheet">
+
+    <link rel="shortcut icon" href="Pictures/GLester_logo.png" type="image/x-icon">
+     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Gabarito:wght@400..900&family=Geom:ital,wght@0,300..900;1,300..900&family=Lexend+Deca:wght@100..900&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Titan+One&family=Zen+Dots&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+        }
+
+
+        .nav-link {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 4px; /* Space for underline */
+}
+
+.nav-link::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 5px;        /* Line height */
+  width: 0%;          /* Start width 0 */
+  background-color: #3b82f6; /* Blue underline */
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::before {
+  width: 100%;        /* Expand to full width on hover */
+}
+
+        .home-name {
+            position: absolute;
+            left: 700px;
+            width: 500px;
+        }
+      
+        .section-bg {
+            background-color: #f7fafc;
+        }
+        .btn-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+        }
+        .scroll-animate.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .testimonial-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .testimonial-table th, .testimonial-table td {
+            border: 1px solid #e2e8f0;
+            padding: 12px;
+            text-align: left;
+        }
+        .testimonial-table th {
+            background-color: #edf2f7;
+            font-weight: 600;
+        }
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        #contact input:focus,
+        #contact textarea:focus {
+            outline: none !important;
+            box-shadow: 0 0 0 2px #3b82f6 !important;
+        }
+    </style>
+</head>
+
+
+
+<body class="bg-white text-gray-800">
+
+<!-- Full-screen Preloader -->
+<div id="preloader" class="fixed inset-0 bg-white flex flex-col justify-center items-center z-[9999]">
+  <!-- Animated Spinner -->
+  <div class="animate-spin rounded-full h-24 w-24 border-t-4 border-b-4 border-blue-600 mb-6"></div>
+  <!-- Loading Text -->
+  <p class="text-gray-700 text-xl font-semibold tracking-wider">Loading Portfolio...</p>
+</div>
+
+
+    <!-- Navigation -->
+<nav class="bg-white shadow-md fixed w-full z-50">
+  <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+    <!-- Logo -->
+    <div class="logo">
+      <img src="./Pictures/logo_glester.png" alt="Logo" class="h-10 w-auto">
+    </div>
+
+    <!-- Desktop Menu -->
+    <ul class="hidden md:flex space-x-10">
+        
+      <li><a href="#home" class="text-gray-700 hover:text-blue-600  transition nav-link font-sans font-bold">Home</a></li>
+      <li><a href="#about" class="text-gray-700 hover:text-blue-600 transition nav-link font-sans font-bold">About</a></li>
+      <li><a href="#services" class="text-gray-700 hover:text-blue-600 transition nav-link font-sans font-bold">Services</a></li>
+      <li><a href="#projects" class="text-gray-700 hover:text-blue-600 transition nav-link font-sans font-bold">Project</a></li>
+    </ul>
+
+    <!-- Mobile Menu Button -->
+    <button class="md:hidden text-2xl" onclick="toggleMenu()">☰</button>
+  </div>
+
+  <!-- Mobile Menu Overlay -->
+  <div id="mobile-menu-overlay" class="fixed inset-0 bg-black/50 backdrop-blur-sm hidden z-40"></div>
+
+  <!-- Mobile Sidebar Menu -->
+  <div id="mobile-menu" class="fixed top-0 right-0 h-full w-64 bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-50">
+    <ul class="flex flex-col mt-16 space-y-4 px-6">
+      <li><a href="#home" class="block text-gray-700 hover:text-blue-600 font-sans font-bold" onclick="closeMenu()">Home</a></li>
+      <li><a href="#about" class="block text-gray-700 hover:text-blue-600 font-sans font-bold" onclick="closeMenu()">About</a></li>
+      <li><a href="#services" class="block text-gray-700 hover:text-blue-600 font-sans font-bold" onclick="closeMenu()">Services</a></li>
+      <li><a href="#projects" class="block text-gray-700 hover:text-blue-600 font-sans font-bold" onclick="closeMenu()">Project</a></li>
+    </ul>
+  </div>
+</nav>
+
+  <!-- Home Section -->
+<section id="home" class="relative w-full h-screen flex flex-col justify-center px-6 sm:px-12 md:px-16 lg:px-24 gap-8 overflow-hidden z-0">
+
+  <!-- Background Video -->
+  <video autoplay muted loop class="absolute top-0 left-0 w-full h-full object-cover z-0" style="pointer-events: none;">
+    <source src="./Pictures/landing_page.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Overlay (for readability) -->
+  <div class="absolute top-0 left-0 w-full h-full bg-black/50 z-0"></div>
+
+  <!-- Intro Text -->
+  <div class="relative z-10 max-w-3xl mx-auto text-center space-y-6 animate-fadeIn">
+    <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight font-['Oswald']">
+      Hi, I'm Glester
+    </h1>
+    <p class="text-gray-200 text-lg sm:text-xl md:text-2xl">
+      I’m a professional Virtual Assistant helping businesses grow efficiently.  
+      From managing schedules to handling administrative tasks, I take care of the details so you can focus on what matters most.
+    </p>
+
+    <!-- Call-to-Action Buttons -->
+    <div class="flex flex-col sm:flex-row justify-center gap-4 mt-6">
+      <button id="hireMeBtn" class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition z-10">
+        Hire Me
+      </button>
+      <a href="#projects" class="bg-gray-200 text-gray-800 px-6 py-3 rounded-lg font-semibold hover:bg-gray-300 transition">
+        See My Work
+      </a>
+    </div>
+  </div>
+
+</section>
+
+<!-- Modal -->
+<div id="hireMeModal" class="fixed inset-0 bg-black bg-opacity-50 justify-center items-center z-50" style="display: none;">
+  <div class="bg-white rounded-lg p-8 w-11/12 max-w-md relative">
+    <!-- Close button -->
+    <button id="closeModal" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800 text-2xl">&times;</button>
+
+    <h2 class="text-2xl font-bold mb-4 text-center">Hire Me</h2>
+    <form class="space-y-4">
+      <input type="text" placeholder="Your Name" class="w-full border border-gray-300 rounded px-3 py-2" required>
+      <input type="email" placeholder="Your Email" class="w-full border border-gray-300 rounded px-3 py-2" required>
+
+      <!-- Subject Dropdown -->
+      <select id="subjectSelect" class="w-full border border-gray-300 rounded px-3 py-2" required>
+        <option value="">Select Subject</option>
+        <option value="project">Project Inquiry</option>
+        <option value="services">Virtual Assistant Services</option>
+        <option value="collaboration">Collaboration Proposal</option>
+        <option value="availability">Question about Availability</option>
+        <option value="other">Other</option>
+      </select>
+
+      <!-- Other subject input (hidden by default) -->
+      <input type="text" id="otherSubject" placeholder="Please specify" class="w-full border border-gray-300 rounded px-3 py-2 hidden">
+
+      <textarea placeholder="Your Message" class="w-full border border-gray-300 rounded px-3 py-2" rows="4" required></textarea>
+      <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition w-full">
+        Send Message
+      </button>
+    </form>
+  </div>
+</div>
+
+
+  <!-- About Me Section -->
+<section id="about" class="bg-gray-50 py-20">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Section Title -->
+    <h2 class="text-4xl font-bold text-gray-900 mb-12 text-center">About Me</h2>
+    
+    <div class="flex flex-col md:flex-row items-center md:items-start md:space-x-12">
+      
+      <!-- Profile Image -->
+      <div class="mb-8 md:mb-0 md:w-1/3 flex justify-center">
+        <img src="https://scontent.fceb1-2.fna.fbcdn.net/v/t39.30808-6/341851657_243981621453437_5896697899513871325_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeE-NB_FULhTHGNrkseQdroL9egmLWJo23z16CYtYmjbfGPd6btjqX2zYduNIHhUPo8WaGosz6-IEDaXJ7vj-PtV&_nc_ohc=tL9ohP6nD3kQ7kNvwHPtQZi&_nc_oc=AdkLAFnZRj7vTe-dvi97Dt4xOxYbIZvmUOlkStjr94-xPbUgBtMrcvYe4zwjThWy3UI&_nc_zt=23&_nc_ht=scontent.fceb1-2.fna&_nc_gid=W46amGyzC8m-5oBzyOkqjA&oh=00_AftOIVCgvaCrZXVgk8TzgRpSzmHFEFpxbJv-Rs8WmD-fkA&oe=69939D2A" alt="Glester Seining" class="rounded-full shadow-lg w-48 h-48 object-cover">
+      </div>
+      
+      <!-- About Me Text -->
+    <div class="md:w-2/3 text-gray-700 space-y-6">
+    <p>
+        Hi, I’m <span class="font-semibold">Glester Seining</span>, a seasoned Virtual Assistant with extensive experience supporting businesses across Real Estate, Graphic Design, Video Editing, Social Media Management, and Administrative Operations. Over the years, I’ve helped entrepreneurs and companies streamline workflows, manage their digital presence, and achieve greater efficiency.
+    </p>
+    <p>
+        I bring a highly organized, detail-oriented, and proactive approach to every project. From managing schedules and communications to creating polished content and coordinating online platforms, I ensure that daily operations run smoothly and deadlines are always met.
+    </p>
+    <p>
+        Partnering with me means gaining a reliable and experienced professional who is committed to enhancing your productivity, refining your brand presence, and handling your operational needs with precision and care.
+    </p>
+</div>
+
+
+    </div>
+  </div>
+
+  <ul id="stats" class="flex flex-col md:grid grid-cols-3 gap-5 text-redis-neutral-800 max-w-2xl mx-auto p-10 mt-10">
+    <li
+        class="w-full text-sm font-semibold text-slate-900 p-6 bg-white border border-slate-900/10 bg-clip-padding shadow-md shadow-slate-900/5 rounded-lg flex flex-col justify-center">
+        <span class="counter mb-1 text-teal-400 font-display text-5xl" data-target="5">0</span>
+        Years of Experience
+    </li>
+    <li
+        class="w-full text-sm font-semibold text-slate-900 p-6 bg-white border border-slate-900/10 bg-clip-padding shadow-md shadow-slate-900/5 rounded-lg flex flex-col justify-center">
+        <span class="counter mb-1 text-teal-400 font-display text-5xl" data-target="120">0</span>
+        Projects Completed
+    </li>
+    <li
+        class="w-full text-sm font-semibold text-slate-900 p-6 bg-white border border-slate-900/10 bg-clip-padding shadow-md shadow-slate-900/5 rounded-lg flex flex-col justify-center">
+        <span class="counter mb-1 text-teal-400 font-display text-5xl" data-target="50">0</span>
+      Happy Clients
+    </li>
+</ul>
+</section>
+
+   
+    <!-- Services Section -->
+<section id="services" class="bg-white py-20 scroll-animate">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Section Title -->
+    <h2 class="text-4xl font-bold text-gray-900 mb-12 text-center">Services</h2>
+
+    <!-- Services Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <!-- Service Card -->
+     <div class="bg-gray-50 rounded-xl shadow hover:shadow-lg overflow-hidden transition relative z-10">
+
+        <img src="https://www.vgrow.co/wp-content/uploads/2022/06/Real-Estate-Virtual-Assistants-Why-Do-You-Need-Them-1.jpg" alt="Real Estate Virtual Assistant" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Real Estate Virtual Assistant</h3>
+          <p class="text-gray-700 text-sm">Manage property listings, client communications, scheduling, and follow-ups to help real estate businesses stay organized and efficient.</p>
+        </div>
+      </div>
+
+      <div class="bg-gray-50 rounded-xl shadow hover:shadow-lg overflow-hidden transition relative z-10">
+
+        <img src="./Pictures/graphic_design.jpg" alt="Graphic Design" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Graphic Design</h3>
+          <p class="text-gray-700 text-sm">Create visually appealing graphics for social media, marketing materials, and branding to enhance your business’s online presence.</p>
+        </div>
+      </div>
+
+<div class="bg-gray-50 rounded-xl shadow hover:shadow-lg overflow-hidden transition relative z-10">
+        <img src="./Pictures/video editing.jpg" alt="Video Editing" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Video Editing</h3>
+          <p class="text-gray-700 text-sm">Produce polished video content for social media, presentations, and promotional campaigns to engage your audience effectively.</p>
+        </div>
+      </div>
+
+      <div class="bg-gray-50 rounded-xl shadow hover:shadow-lg overflow-hidden transition relative z-10">
+
+        <img src="./Pictures/Social Media Manager.jpg" alt="Social Media Management" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Social Media Manager</h3>
+          <p class="text-gray-700 text-sm">Plan, schedule, and manage your social media accounts to grow your online presence and engage with your audience consistently.</p>
+        </div>
+      </div>
+
+      <div class="bg-gray-50 rounded-xl shadow hover:shadow-lg overflow-hidden transition relative z-10">
+
+        <img src="./Pictures/Adiministrative_Support.jpg" alt="Administrative Support" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Administrative Support</h3>
+          <p class="text-gray-700 text-sm">Handle email management, calendar scheduling, data entry, and other administrative tasks to keep your business running smoothly.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="bg-gray-50 py-20 scroll-animate">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Section Title -->
+    <h2 class="text-4xl font-bold text-gray-900 mb-12 text-center">Projects</h2>
+
+    <!-- Projects Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <!-- Project 1: Real Estate Lead Management -->
+      <div class="bg-white rounded-xl shadow hover:shadow-lg overflow-hidden transition-shadow duration-300">
+        <img src="./Pictures/real estate_project.jpg" alt="Real Estate Lead Management" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Real Estate Lead Management</h3>
+          <p class="text-gray-700 text-sm mb-2">Managed client communications, scheduled property viewings, and organized listings for a real estate client, improving lead response by 40%.</p>
+          <p class="text-gray-500 text-xs"><span class="font-medium">Tools Used:</span> Trello, Google Workspace</p>
+        </div>
+      </div>
+
+      <!-- Project 2: Instagram Content Creation -->
+      <div class="bg-white rounded-xl shadow hover:shadow-lg overflow-hidden transition-shadow duration-300">
+        <img src="./Pictures/instagram.jpg" alt="Instagram Content Creation" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Instagram Content Creation</h3>
+          <p class="text-gray-700 text-sm mb-2">Designed 10 Instagram posts and 3 stories for a small business, increasing engagement by 25% over one month.</p>
+          <p class="text-gray-500 text-xs"><span class="font-medium">Tools Used:</span> Canva, Photoshop</p>
+        </div>
+      </div>
+
+      <!-- Project 3: Video Editing for Social Media Ads -->
+      <div class="bg-white rounded-xl shadow hover:shadow-lg overflow-hidden transition-shadow duration-300">
+        <img src="./Pictures/video_project.jpg" alt="Video Editing Project" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Video Editing for Social Media Ads</h3>
+          <p class="text-gray-700 text-sm mb-2">Edited a 30-second promotional video for a client’s Facebook and Instagram ad campaign, producing a polished, engaging clip.</p>
+          <p class="text-gray-500 text-xs"><span class="font-medium">Tools Used:</span> Adobe Premiere Pro</p>
+        </div>
+      </div>
+
+      <!-- Project 4: Social Media Management -->
+      <div class="bg-white rounded-xl shadow hover:shadow-lg overflow-hidden transition-shadow duration-300">
+        <img src="./Pictures/socialmedia_project.jpg" alt="Social Media Management" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Social Media Management</h3>
+          <p class="text-gray-700 text-sm mb-2">Scheduled and managed posts for Instagram and Facebook, increasing engagement by 30% over three months.</p>
+          <p class="text-gray-500 text-xs"><span class="font-medium">Tools Used:</span> Buffer, Canva</p>
+        </div>
+      </div>
+
+      <!-- Project 5: Administrative Support -->
+      <div class="bg-white rounded-xl shadow hover:shadow-lg overflow-hidden transition-shadow duration-300">
+        <img src="./Pictures/administrative_project.jpg" alt="Administrative Support Project" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Administrative Support</h3>
+          <p class="text-gray-700 text-sm mb-2">Handled calendar management, email correspondence, and data entry for small businesses, improving workflow efficiency.</p>
+          <p class="text-gray-500 text-xs"><span class="font-medium">Tools Used:</span> Google Workspace, Trello</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+   <section id="testimonials" class="py-10 lg:py-20 scroll-animate">
+    <div class="container mx-auto">
+        <p class="uppercase tracking-wider mb-8 text-gray-600 text-center">
+            What clients are saying about my work
+        </p>
+        <div class="flex flex-col md:flex-row md:-mx-3">
+            <!-- Testimonial 1 -->
+            <div class="flex-1 px-3">
+                <div class="p-12 rounded-lg border border-solid border-gray-200 mb-8"
+                    style="box-shadow:0 10px 28px rgba(0,0,0,.08)">
+                    <p class="text-xl font-semibold">
+                        "Glester has been an amazing Virtual Assistant. He manages tasks efficiently and ensures deadlines are met with great attention to detail."
+                    </p>
+                    <p class="mt-6">
+                        From handling administrative duties to organizing my calendar and emails, his work allows me to focus on growing my business without worry.
+                    </p>
+                    <div class="flex items-center mt-8">
+                        <img class="w-12 h-12 mr-4 rounded-full"
+                             src="https://as2.ftcdn.net/v2/jpg/02/85/39/19/1000_F_285391990_6Ya03nBqFWfh94koGtAAQlIeWteZUIDR.jpg" alt="Maria Santos">
+                        <div>
+                            <p>Paul Olaes</p>
+                            <p class="text-sm text-gray-600">Founder, Bright Homes Realty</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="flex-1 px-3">
+                <div class="p-12 rounded-lg border border-solid border-gray-200 mb-8"
+                    style="box-shadow:0 10px 28px rgba(0,0,0,.08)">
+                    <p class="text-xl font-semibold">
+                        "Glester’s support with social media and content creation has been invaluable. His creativity and reliability stand out."
+                    </p>
+                    <p class="mt-6">
+                        He consistently delivers quality work on time and helps streamline my business processes, making operations much smoother.
+                    </p>
+                    <div class="flex items-center mt-8">
+                        <img class="w-12 h-12 mr-4 rounded-full"
+                             src="https://media.craiyon.com/2025-04-23/L6QzKgbpQLGMTaoFefuxqA.webp" alt="Jonathan Cruz">
+                        <div>
+                            <p>Jonathan Fawley</p>
+                            <p class="text-sm text-gray-600">CEO, Creative Ventures</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div class="flex-1 px-3">
+                <div class="p-12 rounded-lg border border-solid border-gray-200 mb-8"
+                    style="box-shadow:0 10px 28px rgba(0,0,0,.08)">
+                    <p class="text-xl font-semibold">
+                        "Glester is highly professional and detail-oriented. His assistance with administrative tasks and client communications is outstanding."
+                    </p>
+                    <p class="mt-6">
+                        Thanks to his support, I have more time to focus on strategy and growth, knowing that daily operations are in capable hands.
+                    </p>
+                    <div class="flex items-center mt-8">
+                        <img class="w-12 h-12 mr-4 rounded-full"
+                             src="https://image.cdn2.seaart.ai/2023-09-15/17246151220700165/967931897e983abf5d867a88e6faa0d74791ba5f_high.webp" alt="Angela Reyes">
+                        <div>
+                            <p>Ketly Jean Pierre </p>
+                            <p class="text-sm text-gray-600">Marketing Manager, TrendyCo</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="call-to-action" class="bg-green-800 py-20" style="background-color: #31572c;">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2 class="text-4xl font-bold text-white mb-4">Ready to Work Together?</h2>
+    <p class="text-white text-lg sm:text-xl mb-8">
+      I’m here to help your business run smoothly and efficiently. Let’s work together to achieve your goals.
+    </p>
+    
+  </div>
+</section>
+
+    <!-- Contact Section -->
+
+<!-- Download CV Button (fixed on page) -->
+<button onclick="openCVModal()" 
+   class="fixed bottom-6 right-6 z-50 
+          flex items-center gap-2 
+          bg-blue-600 hover:bg-blue-700 
+          text-white px-5 py-3 font-sans font-bold
+          rounded-full shadow-lg 
+          transition duration-300">
+
+  <img src="./Pictures/download.png" 
+       alt="Download Icon" 
+       class="w-5 h-5">
+
+  <span>Download CV</span>
+</button>
+
+<!-- CV Modal -->
+<div id="cvModal" 
+     class="fixed inset-0 bg-black/60 backdrop-blur-sm 
+            flex items-center justify-center hidden z-50">
+
+  <!-- Modal Content -->
+  <div class="bg-white w-[90%] md:w-[70%] max-h-[90%] overflow-auto rounded-lg shadow-xl p-6 relative">
+
+    <!-- Fixed Close Button -->
+    <button onclick="closeCVModal()" 
+            class="fixed top-6 right-6 z-50 text-gray-600 hover:text-black text-2xl font-bold bg-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg">
+      &times;
+    </button>
+
+    <!-- CV Preview Content -->
+    <div class="space-y-4 text-gray-800">
+      <h2 class="text-2xl font-bold">Glester Seninig</h2>
+      <p class="font-semibold">Virtual Assistant</p>
+
+      <h3 class="font-bold mt-4">Contact Information</h3>
+      <p>Email: glester@example.com<br>
+         Phone: +63 912 345 6789<br>
+         Location: Philippines</p>
+
+      <h3 class="font-bold mt-4">Profile</h3>
+      <p>I am Glester Seninig, a professional Virtual Assistant with expertise in Real Estate support, Graphic Design, Video Editing, Social Media Management, and Administrative tasks. I help entrepreneurs and businesses streamline operations, manage their online presence, and save time while focusing on growth.</p>
+
+      <h3 class="font-bold mt-4">Skills</h3>
+      <ul class="list-disc list-inside">
+        <li>Real Estate Support</li>
+        <li>Graphic Design (Canva, Photoshop)</li>
+        <li>Video Editing (Premiere Pro)</li>
+        <li>Social Media Management</li>
+        <li>Administrative Support & Data Entry</li>
+        <li>Calendar & Email Management</li>
+      </ul>
+
+      <h3 class="font-bold mt-4">Experience</h3>
+      <p><strong>Freelance Virtual Assistant (2022 - Present)</strong><br>
+      - Managed client communications, scheduling, and administrative tasks.<br>
+      - Assisted in social media content creation and management.<br>
+      - Produced video editing projects for small businesses.</p>
+
+      <p><strong>Real Estate Support Assistant (2021 - 2022)</strong><br>
+      - Managed property listings, appointments, and client follow-ups.<br>
+      - Improved lead response efficiency by 40%.</p>
+
+      <h3 class="font-bold mt-4">Education</h3>
+      <p>Bachelor's Degree in Business Administration (2016 - 2020)<br>
+         XYZ University, Philippines</p>
+    </div>
+
+    <!-- Fixed Download PDF Button inside modal -->
+    <a href="./Pictures/Glester_Seninig_Virtual_Assistant_CV.pdf" download
+       class="fixed bottom-6 right-6 z-50 bg-green-600 hover:bg-green-700 text-white px-5 py-3 rounded-full font-bold shadow-lg transition">
+       Download PDF
+    </a>
+
+  </div>
+</div>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Mobile menu toggle
+      function toggleMenu() {
+  const menu = document.getElementById('mobile-menu');
+  const overlay = document.getElementById('mobile-menu-overlay');
+
+  // Slide menu in/out
+  menu.classList.toggle('translate-x-full');
+
+  // Show/hide overlay
+  overlay.classList.toggle('hidden');
+}
+
+function closeMenu() {
+  const menu = document.getElementById('mobile-menu');
+  const overlay = document.getElementById('mobile-menu-overlay');
+
+  // Slide menu out
+  menu.classList.add('translate-x-full');
+
+  // Hide overlay
+  overlay.classList.add('hidden');
+}
+
+// Close menu if overlay is clicked
+document.getElementById('mobile-menu-overlay').addEventListener('click', closeMenu);
+        // Testimonials functionality
+        let liked1 = false, disliked1 = false;
+        let liked2 = false, disliked2 = false;
+        let likes1 = 5, dislikes1 = 0;
+        let likes2 = 3, dislikes2 = 1;
+
+        function toggleLike(id) {
+            if (id === 1) {
+                if (liked1) {
+                    liked1 = false;
+                    likes1--;
+                    document.getElementById('like-icon-1').textContent = '👍';
+                    document.getElementById('likes-1').textContent = likes1;
+                } else {
+                    liked1 = true;
+                    likes1++;
+                    document.getElementById('like-icon-1').textContent = '❤️';
+                    document.getElementById('likes-1').textContent = likes1;
+                    if (disliked1) {
+                        toggleDislike(1);
+                    }
+                }
+            } else {
+                if (liked2) {
+                    liked2 = false;
+                    likes2--;
+                    document.getElementById('like-icon-2').textContent = '👍';
+                    document.getElementById('likes-2').textContent = likes2;
+                } else {
+                    liked2 = true;
+                    likes2++;
+                    document.getElementById('like-icon-2').textContent = '❤️';
+                    document.getElementById('likes-2').textContent = likes2;
+                    if (disliked2) {
+                        toggleDislike(2);
+                    }
+                }
+            }
+        }
+
+        function toggleDislike(id) {
+            if (id === 1) {
+                if (disliked1) {
+                    disliked1 = false;
+                    dislikes1--;
+                    document.getElementById('dislike-icon-1').textContent = '👎';
+                    document.getElementById('dislikes-1').textContent = dislikes1;
+                } else {
+                    disliked1 = true;
+                    dislikes1++;
+                    document.getElementById('dislike-icon-1').textContent = '👎';
+                    document.getElementById('dislikes-1').textContent = dislikes1;
+                    if (liked1) {
+                        toggleLike(1);
+                    }
+                }
+            } else {
+                if (disliked2) {
+                    disliked2 = false;
+                    dislikes2--;
+                    document.getElementById('dislike-icon-2').textContent = '👎';
+                    document.getElementById('dislikes-2').textContent = dislikes2;
+                } else {
+                    disliked2 = true;
+                    dislikes2++;
+                    document.getElementById('dislike-icon-2').textContent = '👎';
+                    document.getElementById('dislikes-2').textContent = dislikes2;
+                    if (liked2) {
+                        toggleLike(2);
+                    }
+                }
+            }
+        }
+
+        function showHeart(id) {
+            if (!liked1 && id === 1) {
+                document.getElementById('like-icon-1').textContent = '❤️';
+            } else if (!liked2 && id === 2) {
+                document.getElementById('like-icon-2').textContent = '❤️';
+            }
+        }
+
+        function hideHeart(id) {
+            if (!liked1 && id === 1) {
+                document.getElementById('like-icon-1').textContent = '👍';
+            } else if (!liked2 && id === 2) {
+                document.getElementById('like-icon-2').textContent = '👍';
+            }
+        }
+
+        function showThumb(id) {
+            // No change for dislike on hover
+        }
+
+        function hideThumb(id) {
+            // No change for dislike on hover
+        }
+
+        function editComment(id) {
+            const commentSpan = document.getElementById(`comment-${id}`);
+            const newComment = prompt('Edit your comment:', commentSpan.textContent);
+            if (newComment !== null) {
+                commentSpan.textContent = newComment;
+            }
+        }
+
+        function deleteComment(id) {
+            if (confirm('Are you sure you want to delete this comment?')) {
+                document.querySelector(`#comment-${id}`).closest('.testimonial-comment').remove();
+            }
+        }
+
+
+
+  const hireMeBtn = document.getElementById('hireMeBtn');
+  const hireMeModal = document.getElementById('hireMeModal');
+  const closeModal = document.getElementById('closeModal');
+
+  const subjectSelect = document.getElementById('subjectSelect');
+  const otherSubject = document.getElementById('otherSubject');
+
+  // Show/hide modal
+  hireMeBtn.addEventListener('click', () => {
+    console.log('Hire Me button clicked');
+    hireMeModal.style.display = 'flex';
+  });
+
+  closeModal.addEventListener('click', () => {
+    hireMeModal.style.display = 'none';
+  });
+
+  hireMeModal.addEventListener('click', (e) => {
+    if (e.target === hireMeModal) {
+      hireMeModal.style.display = 'none';
+    }
+  });
+
+  // Show "Other" input when selected
+  subjectSelect.addEventListener('change', () => {
+    if (subjectSelect.value === 'other') {
+      otherSubject.classList.remove('hidden');
+      otherSubject.required = true;
+    } else {
+      otherSubject.classList.add('hidden');
+      otherSubject.required = false;
+    }
+  });
+
+  // Handle form submission
+  document.querySelector('#hireMeModal form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    alert('Thank you for your message! I will get back to you soon.');
+    hireMeModal.style.display = 'none';
+  });
+
+
+  const scrollElements = document.querySelectorAll('.scroll-animate');
+
+  // Function to check if element is in viewport
+function isInViewport(el, offset = 50) { // smaller offset
+  const rect = el.getBoundingClientRect();
+  return rect.top <= (window.innerHeight || document.documentElement.clientHeight) - offset;
+}
+
+  // Add or remove animation class
+  function handleScrollAnimation() {
+    scrollElements.forEach(el => {
+      if (isInViewport(el)) {
+        el.classList.add('show'); // Animate in
+      } else {
+        el.classList.remove('show'); // Animate out if scrolling back
+      }
+    });
+  }
+
+  // Listen to scroll event
+  window.addEventListener('scroll', handleScrollAnimation);
+
+  // Trigger on page load
+  window.addEventListener('load', () => {
+    scrollElements.forEach(el => el.classList.add('show'));
+    handleScrollAnimation();
+  });
+
+  function openCVModal() {
+    document.getElementById('cvModal').classList.remove('hidden');
+  }
+
+  function closeCVModal() {
+    document.getElementById('cvModal').classList.add('hidden');
+  }
+
+  // Close modal when clicking outside content
+  document.getElementById('cvModal').addEventListener('click', function(e) {
+    if (e.target === this) {
+      closeCVModal();
+    }
+  });
+
+  // Animated Counters
+  const counters = document.querySelectorAll('.counter');
+  const statsSection = document.getElementById('stats');
+  let countersAnimated = false;
+
+  function animateCounters() {
+    if (countersAnimated) return;
+    countersAnimated = true;
+
+    counters.forEach(counter => {
+      const target = +counter.getAttribute('data-target');
+      const increment = target / 100; // Adjust speed here
+      let current = 0;
+
+      const updateCounter = () => {
+        current += increment;
+        if (current < target) {
+          counter.innerText = Math.ceil(current);
+          setTimeout(updateCounter, 20); // Adjust speed here
+        } else {
+          counter.innerText = target;
+        }
+      };
+
+      updateCounter();
+    });
+  }
+
+  // Intersection Observer for scroll-triggered counters
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCounters();
+      }
+    });
+  }, { threshold: 0.5 });
+
+  observer.observe(statsSection);
+
+window.addEventListener('load', () => {
+  const preloader = document.getElementById('preloader');
+
+  // Keep preloader for 5 seconds even after page load
+  setTimeout(() => {
+    // Smooth fade-out
+    preloader.style.transition = 'opacity 2s ease';
+    preloader.style.opacity = '0';
+
+    // After fade-out, remove preloader from DOM
+    setTimeout(() => {
+      preloader.style.display = 'none';
+      // Enable scrolling for main content
+      document.body.classList.remove('overflow-hidden');
+    }, 300); // matches fade-out duration
+  }, 3000); // preloader stays visible for 5 seconds
+});
+    </script>
+</body>
+</html>
