@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Glester Senining - Virtual Assistant</title>
-    <link href="./output.css" rel="stylesheet">
+
+
 
     <link rel="shortcut icon" href="Pictures/GLester_logo.png" type="image/x-icon">
-     <script src="https://cdn.tailwindcss.com"></script>
+     
     <!-- Chart.js -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+       <link href="../src/output.css" rel="stylesheet">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,6 +20,27 @@
         body {
             font-family: 'Georgia', serif;
         }
+
+.social-links {
+  display: flex;
+  gap: 12px;          /* spacing between icons */
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.social-links a img {
+  width: 32px;        /* small logo size */
+  height: 32px;       /* keeps it square */
+  object-fit: contain; /* scales image proportionally */
+  transition: transform 0.2s ease;
+}
+
+.social-links a:hover img {
+  transform: scale(1.2); /* slightly bigger on hover */
+}
+
+
 
 
         .nav-link {
@@ -40,6 +62,17 @@
 
 .nav-link:hover::before {
   width: 100%;        /* Expand to full width on hover */
+}
+
+
+@keyframes floatUpDown {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}
+
+.float-animation {
+  animation: floatUpDown 2s ease-in-out infinite;
 }
 
         .home-name {
@@ -112,7 +145,9 @@
 
 
     <!-- Navigation -->
-<nav class="bg-white shadow-md fixed w-full z-50">
+<nav id="navbar" class="bg-white shadow-md fixed top-0 left-0 w-full z-50 transition-all duration-300 ease-in-out">
+
+
   <div class="container mx-auto px-4 py-3 flex justify-between items-center">
     <!-- Logo -->
     <div class="logo">
@@ -131,27 +166,27 @@
     <!-- Mobile Menu Button -->
     <button class="md:hidden text-2xl" onclick="toggleMenu()">☰</button>
   </div>
-
-  <!-- Mobile Menu Overlay -->
-  <div id="mobile-menu-overlay" class="fixed inset-0 bg-black/50 backdrop-blur-sm hidden z-40"></div>
-
-  <!-- Mobile Sidebar Menu -->
-  <div id="mobile-menu" class="fixed top-0 right-0 h-full w-64 bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-50">
-    <ul class="flex flex-col mt-16 space-y-4 px-6">
-      <li><a href="#home" class="block text-gray-700 hover:text-blue-600 font-sans font-bold" onclick="closeMenu()">Home</a></li>
-      <li><a href="#about" class="block text-gray-700 hover:text-blue-600 font-sans font-bold" onclick="closeMenu()">About</a></li>
-      <li><a href="#services" class="block text-gray-700 hover:text-blue-600 font-sans font-bold" onclick="closeMenu()">Services</a></li>
-      <li><a href="#projects" class="block text-gray-700 hover:text-blue-600 font-sans font-bold" onclick="closeMenu()">Project</a></li>
-    </ul>
-  </div>
 </nav>
+
+<!-- Mobile Menu Overlay (moved outside nav for proper z-index stacking) -->
+<div id="mobile-menu-overlay" class="fixed inset-0 bg-black/80 backdrop-blur-sm hidden z-40"></div>
+
+<!-- Mobile Sidebar Menu (moved outside nav for proper z-index stacking) -->
+<div id="mobile-menu" class="fixed top-0 right-0 h-full w-72 bg-white shadow-xl transform translate-x-full transition-transform duration-300 ease-in-out z-50">
+  <ul class="flex flex-col mt-16 space-y-4 px-6">
+    <li><a href="#home" class="block text-gray-700 hover:text-blue-600 font-sans font-bold text-lg" onclick="closeMenu()">Home</a></li>
+    <li><a href="#about" class="block text-gray-700 hover:text-blue-600 font-sans font-bold text-lg" onclick="closeMenu()">About</a></li>
+    <li><a href="#services" class="block text-gray-700 hover:text-blue-600 font-sans font-bold text-lg" onclick="closeMenu()">Services</a></li>
+    <li><a href="#projects" class="block text-gray-700 hover:text-blue-600 font-sans font-bold text-lg" onclick="closeMenu()">Project</a></li>
+  </ul>
+</div>
 
   <!-- Home Section -->
 <section id="home" class="relative w-full h-screen flex flex-col justify-center px-6 sm:px-12 md:px-16 lg:px-24 gap-8 overflow-hidden z-0">
 
   <!-- Background Video -->
   <video autoplay muted loop class="absolute top-0 left-0 w-full h-full object-cover z-0" style="pointer-events: none;">
-    <source src="./Pictures/landing_page.mp4" type="video/mp4">
+    <source src="./Pictures/manlaptop.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 
@@ -245,6 +280,9 @@
     </div>
   </div>
 
+
+
+
   <ul id="stats" class="flex flex-col md:grid grid-cols-3 gap-5 text-redis-neutral-800 max-w-2xl mx-auto p-10 mt-10">
     <li
         class="w-full text-sm font-semibold text-slate-900 p-6 bg-white border border-slate-900/10 bg-clip-padding shadow-md shadow-slate-900/5 rounded-lg flex flex-col justify-center">
@@ -262,6 +300,68 @@
       Happy Clients
     </li>
 </ul>
+<!-- Social Links Section -->
+<div class="social-links">
+  <!-- LinkedIn -->
+  <a href="https://linkedin.com/in/glester-seninig" target="_blank" rel="noopener noreferrer">
+    <img src="./Pictures/linkedin.png" alt="LinkedIn">
+  </a>
+
+  <!-- GitHub -->
+  <a href="https://github.com/glester-seninig" target="_blank" rel="noopener noreferrer">
+    <img src="./Pictures/github.png" alt="GitHub">
+  </a>
+
+  <!-- Facebook -->
+  <a href="https://web.facebook.com/glester.senining" target="_blank" rel="noopener noreferrer">
+    <img src="./Pictures/facebook.png" alt="Facebook">
+  </a>
+
+  <!-- Gmail -->
+ 
+</div>
+<!-- Features / Info Container -->
+<!-- Modern Professional Gallery Layout -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<div class="max-w-6xl mx-auto mt-12 px-4 font-inter">
+  
+  <div class="flex flex-col md:flex-row justify-center items-stretch gap-8">
+   
+    <!-- Languages -->
+    <div class="group bg-gradient-to-br from-white to-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 flex-1">
+      <div class="flex flex-col items-center text-center">
+        <img src="https://img.icons8.com/color/96/000000/language.png" alt="Languages Logo" class="w-16 h-16 mb-4 group-hover:scale-110 transition-transform">
+        <h3 class="text-xl font-semibold text-indigo-600 mb-2">Languages</h3>
+        <p class="text-gray-700">English (Professional)<br> Filipino (Native)</p>
+      </div>
+    </div>
+
+    <!-- Email -->
+    <div class="group bg-gradient-to-br from-white to-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 flex-1">
+      <div class="flex flex-col items-center text-center">
+        <img src="https://img.icons8.com/color/96/000000/gmail.png" alt="Email Logo" class="w-16 h-16 mb-4 group-hover:scale-110 transition-transform">
+        <h3 class="text-xl font-semibold text-blue-600 mb-2">Email</h3>
+        <a href="mailto:glester@example.com" class="text-gray-700 hover:text-blue-600 transition-colors">
+          glester@example.com
+        </a>
+      </div>
+    </div>
+
+    <!-- Location -->
+    <div class="group bg-gradient-to-br from-white to-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 flex-1">
+      <div class="flex flex-col items-center text-center">
+        <img src="https://img.icons8.com/color/96/000000/philippines.png" alt="Location Logo" class="w-16 h-16 mb-4 group-hover:scale-110 transition-transform">
+        <h3 class="text-xl font-semibold text-slate-600 mb-2">Location</h3>
+        <a href="https://www.google.com/maps/place/Philippines" target="_blank" rel="noopener noreferrer" class="text-gray-700 hover:text-slate-600 transition-colors">
+          Philippines
+        </a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
 </section>
 
    
@@ -460,15 +560,36 @@
         </div>
     </div>
 </section>
-<section id="call-to-action" class="bg-green-800 py-20" style="background-color: #31572c;">
+<section id="Call-to-Action" class="bg-green-800 py-20 relative" style="background-color: #31572c;">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
     <h2 class="text-4xl font-bold text-white mb-4">Ready to Work Together?</h2>
     <p class="text-white text-lg sm:text-xl mb-8">
       I’m here to help your business run smoothly and efficiently. Let’s work together to achieve your goals.
     </p>
-    
+
+    <!-- Arrow Up Button -->
+    <button onclick="scrollToTop()" 
+      class="mt-8 inline-flex items-center justify-center w-14 h-14 rounded-full bg-white text-green-800 shadow-lg hover:scale-110 transition duration-300 float-animation hover:scale-110 hover:animate-none">
+      
+      <!-- Arrow Icon -->
+      <a href="#home"
+   class="">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" 
+       class="h-6 w-6" 
+       fill="none" 
+       viewBox="0 0 24 24" 
+       stroke="currentColor" 
+       stroke-width="2">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
+  </svg>
+
+</a>
+    </button>
+
   </div>
 </section>
+
 
     <!-- Contact Section -->
 
@@ -570,6 +691,9 @@
 
   // Show/hide overlay
   overlay.classList.toggle('hidden');
+  
+  // Prevent body scrolling when menu is open
+  document.body.classList.toggle('overflow-hidden');
 }
 
 function closeMenu() {
@@ -581,6 +705,9 @@ function closeMenu() {
 
   // Hide overlay
   overlay.classList.add('hidden');
+  
+  // Re-enable body scrolling
+  document.body.classList.remove('overflow-hidden');
 }
 
 // Close menu if overlay is clicked
@@ -840,6 +967,26 @@ window.addEventListener('load', () => {
     }, 300); // matches fade-out duration
   }, 3000); // preloader stays visible for 5 seconds
 });
+
+let lastScrollTop = 0;
+const navbar = document.getElementById("navbar");
+
+window.addEventListener("scroll", function () {
+  let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+  if (scrollTop > lastScrollTop && scrollTop > 80) {
+    // Scrolling Down → Hide Navbar
+    navbar.style.transform = "translateY(-100%)";
+    navbar.style.opacity = "0";
+  } else {
+    // Scrolling Up → Show Navbar
+    navbar.style.transform = "translateY(0)";
+    navbar.style.opacity = "1";
+  }
+
+  lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+});
+
     </script>
 </body>
 </html>
