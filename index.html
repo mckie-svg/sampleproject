@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Glester Senining - Virtual Assistant</title>
 
-
+<link rel="stylesheet" href="style.css">
 
     <link rel="shortcut icon" href="Pictures/GLester_logo.png" type="image/x-icon">
-     
+   
     <!-- Chart.js -->
        <link href="../src/output.css" rel="stylesheet">
 
@@ -19,26 +19,53 @@
     <style>
         body {
             font-family: 'Georgia', serif;
+            
+             background: linear-gradient(
+    to bottom,
+    #f8fbff,
+    #eef6ff
+  );
         }
 
-.social-links {
-  display: flex;
-  gap: 12px;          /* spacing between icons */
-  justify-content: center;
-  align-items: center;
-  margin-top: 1rem;
-}
+                .global-overlay {
+            position: fixed;
+            inset: 0;
+            background: transparent; /* CHANGE THIS */
+            z-index: -1;
+          }
 
-.social-links a img {
-  width: 32px;        /* small logo size */
-  height: 32px;       /* keeps it square */
-  object-fit: contain; /* scales image proportionally */
-  transition: transform 0.2s ease;
-}
+          .social-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+            gap: 20px;          /* spacing between icons */
+            justify-items: center;
+            align-items: center;
+            margin-top: 2rem;
+          }
 
-.social-links a:hover img {
-  transform: scale(1.2); /* slightly bigger on hover */
-}
+          .social-links a.social-icon {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              background: rgba(255, 255, 255, 0.7); /* soft glass-like background */
+              backdrop-filter: blur(8px);
+              border-radius: 12px;
+              padding: 12px;
+              transition: transform 0.3s ease, box-shadow 0.3s ease;
+              box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        } 
+
+          .social-links a.social-icon img {
+            width: 36px;      /* slightly larger but comfortable */
+            height: 36px;
+            object-fit: contain;
+          }
+
+          .social-links a.social-icon:hover {
+            transform: translateY(-4px) scale(1.1);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+          }
+
 
 
 
@@ -128,12 +155,26 @@
             outline: none !important;
             box-shadow: 0 0 0 2px #3b82f6 !important;
         }
+
+ #dotCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+    z-index: -10; /* CHANGE THIS */
+  pointer-events: none;
+}
+/* Optional soft overlay for readability */
+
     </style>
 </head>
 
 
 
 <body class="bg-white text-gray-800">
+  
+  <canvas id="dotCanvas"></canvas>
 
 <!-- Full-screen Preloader -->
 <div id="preloader" class="fixed inset-0 bg-white flex flex-col justify-center items-center z-[9999]">
@@ -168,10 +209,10 @@
   </div>
 </nav>
 
-<!-- Mobile Menu Overlay (moved outside nav for proper z-index stacking) -->
+<!-- Mobile Menu Overlay -->
 <div id="mobile-menu-overlay" class="fixed inset-0 bg-black/80 backdrop-blur-sm hidden z-40"></div>
 
-<!-- Mobile Sidebar Menu (moved outside nav for proper z-index stacking) -->
+<!-- Mobile Sidebar Menu -->
 <div id="mobile-menu" class="fixed top-0 right-0 h-full w-72 bg-white shadow-xl transform translate-x-full transition-transform duration-300 ease-in-out z-50">
   <ul class="flex flex-col mt-16 space-y-4 px-6">
     <li><a href="#home" class="block text-gray-700 hover:text-blue-600 font-sans font-bold text-lg" onclick="closeMenu()">Home</a></li>
@@ -180,6 +221,11 @@
     <li><a href="#projects" class="block text-gray-700 hover:text-blue-600 font-sans font-bold text-lg" onclick="closeMenu()">Project</a></li>
   </ul>
 </div>
+
+<!-- Main Scrollable Wrapper -->
+<div class="scrollable-wrapper">
+
+<div class="global-overlay"></div>
 
   <!-- Home Section -->
 <section id="home" class="relative w-full h-screen flex flex-col justify-center px-6 sm:px-12 md:px-16 lg:px-24 gap-8 overflow-hidden z-0">
@@ -212,6 +258,16 @@
         See My Work
       </a>
     </div>
+  </div>
+
+  <!-- Scroll Down Indicator -->
+  <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-20">
+    <a href="#about" class="flex flex-col items-center text-[#31572c] hover:text-[#31572c] transition-colors cursor-pointer">
+      <span class="text-sm mb-2">Scroll Down</span>
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+      </svg>
+    </a>
   </div>
 
 </section>
@@ -250,123 +306,254 @@
 
 
   <!-- About Me Section -->
-<section id="about" class="bg-gray-50 py-20">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-    
-    <!-- Section Title -->
-    <h2 class="text-4xl font-bold text-gray-900 mb-12 text-center">About Me</h2>
-    
-    <div class="flex flex-col md:flex-row items-center md:items-start md:space-x-12">
-      
-      <!-- Profile Image -->
-      <div class="mb-8 md:mb-0 md:w-1/3 flex justify-center">
-        <img src="https://scontent.fceb1-2.fna.fbcdn.net/v/t39.30808-6/341851657_243981621453437_5896697899513871325_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeE-NB_FULhTHGNrkseQdroL9egmLWJo23z16CYtYmjbfGPd6btjqX2zYduNIHhUPo8WaGosz6-IEDaXJ7vj-PtV&_nc_ohc=tL9ohP6nD3kQ7kNvwHPtQZi&_nc_oc=AdkLAFnZRj7vTe-dvi97Dt4xOxYbIZvmUOlkStjr94-xPbUgBtMrcvYe4zwjThWy3UI&_nc_zt=23&_nc_ht=scontent.fceb1-2.fna&_nc_gid=W46amGyzC8m-5oBzyOkqjA&oh=00_AftOIVCgvaCrZXVgk8TzgRpSzmHFEFpxbJv-Rs8WmD-fkA&oe=69939D2A" alt="Glester Seining" class="rounded-full shadow-lg w-48 h-48 object-cover">
+
+  <section id="about" 
+class="relative z-10 py-20 bg-gradient-to-br from-slate-50 to-blue-50 overflow-hidden">
+
+  <div class="max-w-6xl mx-auto px-6 lg:px-8">
+
+    <!-- Section Header -->
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold text-slate-800 tracking-tight">
+        About Me
+      </h2>
+      <p class="mt-4 text-slate-500 max-w-2xl mx-auto">
+        Dedicated Virtual Assistant delivering organized, efficient, and results-driven support.
+      </p>
+    </div>
+
+    <!-- Two Column Layout -->
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+
+      <!-- Profile Image (Soft for Parallax) -->
+      <div class="relative flex justify-center md:justify-end">
+
+        <!-- Decorative Background Blur -->
+        <div class="absolute -top-6 -left-6 w-72 h-72 bg-[#31572c]/10 rounded-full blur-3xl"></div>
+
+        <img 
+          src="https://scontent.fcgy2-4.fna.fbcdn.net/v/t39.30808-6/341851657_243981621453437_5896697899513871325_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeE-NB_FULhTHGNrkseQdroL9egmLWJo23z16CYtYmjbfGPd6btjqX2zYduNIHhUPo8WaGosz6-IEDaXJ7vj-PtV&_nc_ohc=siTpJvR7StoQ7kNvwHn_4MP&_nc_oc=AdlS2rOBLjZf3vQ-PXxA3zqVq533RrzsBDXsatJNVV0UTCQdWcoHEU4S7c-yR9G1nTw&_nc_zt=23&_nc_ht=scontent.fcgy2-4.fna&_nc_gid=k9UOepCPh8uCs6hNPAgnfw&oh=00_AfsCua0YXhW7MuFMHZDYn1NZSBRrMGRFbdxr93uSdsYnOg&oe=6995CFAA" 
+          alt="Glester Seining" 
+          class="relative w-64 md:w-80 rounded-2xl shadow-xl border border-slate-200 hover:scale-105 transition duration-500 ease-in-out"
+        >
+
       </div>
-      
-      <!-- About Me Text -->
-    <div class="md:w-2/3 text-gray-700 space-y-6">
-    <p>
-        Hi, I’m <span class="font-semibold">Glester Seining</span>, a seasoned Virtual Assistant with extensive experience supporting businesses across Real Estate, Graphic Design, Video Editing, Social Media Management, and Administrative Operations. Over the years, I’ve helped entrepreneurs and companies streamline workflows, manage their digital presence, and achieve greater efficiency.
-    </p>
-    <p>
-        I bring a highly organized, detail-oriented, and proactive approach to every project. From managing schedules and communications to creating polished content and coordinating online platforms, I ensure that daily operations run smoothly and deadlines are always met.
-    </p>
-    <p>
-        Partnering with me means gaining a reliable and experienced professional who is committed to enhancing your productivity, refining your brand presence, and handling your operational needs with precision and care.
-    </p>
+
+      <!-- Description -->
+      <div class="text-slate-700 text-lg leading-relaxed space-y-6">
+
+        <p>
+          Hi, I’m 
+          <span class="font-semibold text-[#31572c]">
+            Glester Seining
+          </span>, 
+          a professional Virtual Assistant specializing in Real Estate support, Graphic Design, Video Editing, Social Media Management, and Administrative operations.
+        </p>
+
+        <p>
+          I help businesses stay organized, enhance brand presence, and maintain smooth daily operations through reliable, detail-oriented support.
+        </p>
+
+        <!-- Skill Tags -->
+  <div class="flex flex-wrap gap-4 pt-6 relative z-20">
+
+  <span class="px-5 py-2 text-sm font-medium
+               bg-white text-green-900
+               border border-green-900/30
+               rounded-full
+               shadow-sm
+               hover:border-green-900
+               hover:bg-green-900
+               hover:text-white
+               hover:shadow-md
+               hover:scale-105
+               transition-all duration-300 ease-in-out
+               cursor-pointer">
+    Real Estate VA
+  </span>
+
+  <span class="px-5 py-2 text-sm font-medium
+               bg-white text-green-900
+               border border-green-900/30
+               rounded-full
+               shadow-sm
+               hover:border-green-900
+               hover:bg-green-900
+               hover:text-white
+               hover:shadow-md
+               hover:scale-105
+               transition-all duration-300 ease-in-out
+               cursor-pointer">
+    Graphic Design
+  </span>
+
+  <span class="px-5 py-2 text-sm font-medium
+               bg-white text-green-900
+               border border-green-900/30
+               rounded-full
+               shadow-sm
+               hover:border-green-900
+               hover:bg-green-900
+               hover:text-white
+               hover:shadow-md
+               hover:scale-105
+               transition-all duration-300 ease-in-out
+               cursor-pointer">
+    Video Editing
+  </span>
+
+  <span class="px-5 py-2 text-sm font-medium
+               bg-white text-green-900
+               border border-green-900/30
+               rounded-full
+               shadow-sm
+               hover:border-green-900
+               hover:bg-green-900
+               hover:text-white
+               hover:shadow-md
+               hover:scale-105
+               transition-all duration-300 ease-in-out
+               cursor-pointer">
+    Social Media Management
+  </span>
+
+  <span class="px-5 py-2 text-sm font-medium
+               bg-white text-green-900
+               border border-green-900/30
+               rounded-full
+               shadow-sm
+               hover:border-green-900
+               hover:bg-green-900
+               hover:text-white
+               hover:shadow-md
+               hover:scale-105
+               transition-all duration-300 ease-in-out
+               cursor-pointer">
+    Admin Support
+  </span>
+
 </div>
 
+
+
+
+      </div>
 
     </div>
+
   </div>
 
+</section>
+
+  
 
 
 
-  <ul id="stats" class="flex flex-col md:grid grid-cols-3 gap-5 text-redis-neutral-800 max-w-2xl mx-auto p-10 mt-10">
-    <li
-        class="w-full text-sm font-semibold text-slate-900 p-6 bg-white border border-slate-900/10 bg-clip-padding shadow-md shadow-slate-900/5 rounded-lg flex flex-col justify-center">
-        <span class="counter mb-1 text-teal-400 font-display text-5xl" data-target="5">0</span>
-        Years of Experience
-    </li>
-    <li
-        class="w-full text-sm font-semibold text-slate-900 p-6 bg-white border border-slate-900/10 bg-clip-padding shadow-md shadow-slate-900/5 rounded-lg flex flex-col justify-center">
-        <span class="counter mb-1 text-teal-400 font-display text-5xl" data-target="120">0</span>
-        Projects Completed
-    </li>
-    <li
-        class="w-full text-sm font-semibold text-slate-900 p-6 bg-white border border-slate-900/10 bg-clip-padding shadow-md shadow-slate-900/5 rounded-lg flex flex-col justify-center">
-        <span class="counter mb-1 text-teal-400 font-display text-5xl" data-target="50">0</span>
-      Happy Clients
-    </li>
+
+  <ul id="stats" class="flex flex-col md:grid grid-cols-3 gap-5 text-redis-neutral-800 max-w-2xl mx-auto p-10 mt-10 z-30">
+    <li class="w-full text-sm font-semibold text-slate-800 
+    p-6 bg-white/70 backdrop-blur-md 
+    border border-slate-200 
+    shadow-lg rounded-xl flex flex-col justify-center">
+
+    <span class="counter mb-1 text-teal-500 text-5xl font-bold" data-target="5">0</span>
+    Years of Experience
+</li>
+ <li class="w-full text-sm font-semibold text-slate-800 
+    p-6 bg-white/70 backdrop-blur-md 
+    border border-slate-200 
+    shadow-lg rounded-xl 
+    flex flex-col justify-center">
+
+    <span class="counter mb-1 text-teal-500 text-5xl font-bold" data-target="120">0</span>
+    Projects Completed
+</li>
+ <li class="w-full text-sm font-semibold text-slate-800 
+    p-6 bg-white/70 backdrop-blur-md 
+    border border-slate-200 
+    shadow-lg rounded-xl 
+    flex flex-col justify-center">
+
+    <span class="counter mb-1 text-teal-500 text-5xl font-bold" data-target="50">0</span>
+    Happy Clients
+</li>
 </ul>
 <!-- Social Links Section -->
-<div class="social-links">
-  <!-- LinkedIn -->
-  <a href="https://linkedin.com/in/glester-seninig" target="_blank" rel="noopener noreferrer">
-    <img src="./Pictures/linkedin.png" alt="LinkedIn">
-  </a>
 
-  <!-- GitHub -->
-  <a href="https://github.com/glester-seninig" target="_blank" rel="noopener noreferrer">
-    <img src="./Pictures/github.png" alt="GitHub">
-  </a>
 
-  <!-- Facebook -->
-  <a href="https://web.facebook.com/glester.senining" target="_blank" rel="noopener noreferrer">
-    <img src="./Pictures/facebook.png" alt="Facebook">
-  </a>
+<div class="max-w-lg mx-auto mt-12 px-6 py-6 
+bg-white/60 backdrop-blur-xl 
+border-2 border-[#31572c]/40 
+rounded-2xl shadow-lg">
 
-  <!-- Gmail -->
- 
-</div>
-<!-- Features / Info Container -->
-<!-- Modern Professional Gallery Layout -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<div class="max-w-6xl mx-auto mt-12 px-4 font-inter">
-  
-  <div class="flex flex-col md:flex-row justify-center items-stretch gap-8">
-   
+
+  <!-- Contact Info -->
+  <div class="flex flex-wrap items-center justify-center gap-8 text-base md:text-lg mb-6">
+
     <!-- Languages -->
-    <div class="group bg-gradient-to-br from-white to-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 flex-1">
-      <div class="flex flex-col items-center text-center">
-        <img src="https://img.icons8.com/color/96/000000/language.png" alt="Languages Logo" class="w-16 h-16 mb-4 group-hover:scale-110 transition-transform">
-        <h3 class="text-xl font-semibold text-indigo-600 mb-2">Languages</h3>
-        <p class="text-gray-700">English (Professional)<br> Filipino (Native)</p>
+    <div class="flex items-center gap-4 group ">
+      <img src="./Pictures/world.png" 
+           class="h-6 w-6 object-contain opacity-80 group-hover:scale-110 transition duration-300 forc">
+      <div>
+        <p class="text-xs uppercase tracking-wide text-[#31572c] font-semibold ">Languages</p>
+        <p class="text-gray-700 font-medium">English · Filipino</p>
       </div>
     </div>
 
     <!-- Email -->
-    <div class="group bg-gradient-to-br from-white to-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 flex-1">
-      <div class="flex flex-col items-center text-center">
-        <img src="https://img.icons8.com/color/96/000000/gmail.png" alt="Email Logo" class="w-16 h-16 mb-4 group-hover:scale-110 transition-transform">
-        <h3 class="text-xl font-semibold text-blue-600 mb-2">Email</h3>
-        <a href="mailto:glester@example.com" class="text-gray-700 hover:text-blue-600 transition-colors">
+    <div class="flex items-center gap-4 group">
+      <img src="./Pictures/mail.png" 
+           class="h-6 w-6 object-contain opacity-80 group-hover:scale-110 transition duration-300 forc">
+      <div>
+        <p class="text-xs uppercase tracking-wide text-[#31572c] font-semibold">Email</p>
+        <a href="mailto:glester@example.com" 
+           class="text-gray-700 hover:text-[#31572c] transition font-medium">
           glester@example.com
         </a>
       </div>
     </div>
 
     <!-- Location -->
-    <div class="group bg-gradient-to-br from-white to-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 flex-1">
-      <div class="flex flex-col items-center text-center">
-        <img src="https://img.icons8.com/color/96/000000/philippines.png" alt="Location Logo" class="w-16 h-16 mb-4 group-hover:scale-110 transition-transform">
-        <h3 class="text-xl font-semibold text-slate-600 mb-2">Location</h3>
-        <a href="https://www.google.com/maps/place/Philippines" target="_blank" rel="noopener noreferrer" class="text-gray-700 hover:text-slate-600 transition-colors">
+    <div class="flex items-center gap-4 group">
+      <img src="./Pictures/placeholder.png" 
+           class="h-6 w-6 object-contain opacity-80 group-hover:scale-110 transition duration-300">
+      <div>
+        <p class="text-xs uppercase tracking-wide text-[#31572c] font-semibold">Location</p>
+        <a href="https://www.google.com/maps/place/Philippines" 
+           target="_blank"
+           class="text-gray-700 hover:text-[#31572c] transition font-medium">
           Philippines
         </a>
       </div>
     </div>
 
   </div>
-</div>
 
+  <!-- Social Icons -->
+  <div class="flex items-center justify-center gap-6">
+    <a href="https://linkedin.com/in/glester-seninig" target="_blank">
+      <img src="./Pictures/linkedin.png" 
+           class="h-6 w-6 hover:scale-110 transition duration-300 opacity-80 hover:opacity-100">
+    </a>
+
+    <a href="https://github.com/glester-seninig" target="_blank">
+      <img src="./Pictures/github.png" 
+           class="h-6 w-6 hover:scale-110 transition duration-300 opacity-80 hover:opacity-100">
+    </a>
+
+    <a href="https://web.facebook.com/glester.senining" target="_blank">
+      <img src="./Pictures/facebook.png" 
+           class="h-6 w-6 hover:scale-110 transition duration-300 opacity-80 hover:opacity-100">
+    </a>
+  </div>
+
+</div>
 
 </section>
 
    
     <!-- Services Section -->
-<section id="services" class="bg-white py-20 scroll-animate">
+<section id="services" class=" py-20 scroll-animate bg-transparent">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
     <!-- Section Title -->
@@ -425,7 +612,7 @@
 </section>
 
 <!-- Projects Section -->
-<section id="projects" class="bg-gray-50 py-20 scroll-animate">
+<section id="projects" class="bg-transparent py-20 scroll-animate">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
     <!-- Section Title -->
@@ -489,7 +676,7 @@
 </section>
 
 
-   <section id="testimonials" class="py-10 lg:py-20 scroll-animate">
+   <section id="testimonials" class="py-10 lg:py-20 scroll-animate bg-transparent">
     <div class="container mx-auto">
         <p class="uppercase tracking-wider mb-8 text-gray-600 text-center">
             What clients are saying about my work
@@ -669,6 +856,8 @@
 
   </div>
 </div>
+
+</div> <!-- End of scrollable-wrapper -->
 
     <script>
         // Smooth scrolling
@@ -987,6 +1176,10 @@ window.addEventListener("scroll", function () {
   lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
 });
 
+
+
     </script>
+
+      <script src="script.js"></script>
 </body>
 </html>

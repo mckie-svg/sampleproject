@@ -1,0 +1,142 @@
+/* Card Container */
+/* Card Styling */
+.card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+.card-icon {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .card-icon {
+  transform: scale(1.1);
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.card-text {
+  font-size: 1rem;
+  color: #4B5563; /* slate-600 */
+  line-height: 1.5;
+}
+
+/* Social Links Styling */
+.social-links {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  justify-items: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.social-links a img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  transition: transform 0.2s ease;
+}
+
+.social-links a:hover img {
+  transform: scale(1.2);
+}
+
+/* ============================================
+   SCROLLABLE WRAPPER STYLES
+   ============================================ */
+
+/* Allow body scrolling - removed overflow:hidden to fix services/projects visibility */
+html, body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* The wrapper div that scrolls */
+.scrollable-wrapper {
+  overflow-y: auto;
+  overflow-x: hidden;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* ============================================
+   CUSTOM SCROLLBAR STYLING (Fixed Overlay)
+   ============================================ */
+
+/* Make scrollbar appear as fixed overlay on top of all content */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 9999;
+}
+
+/* Scrollbar Track - Light green background to match theme */
+html::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track {
+  background: rgba(49, 87, 44, 0.2);
+  border-radius: 4px;
+}
+
+/* Scrollbar Thumb - Green theme */
+html::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb {
+  background-color: #31572c;
+  border-radius: 4px;
+  border: none;
+}
+
+/* Scrollbar Thumb Hover - Darker green */
+html::-webkit-scrollbar-thumb:hover,
+body::-webkit-scrollbar-thumb:hover {
+  background-color: #1e3a1a;
+}
+
+/* Firefox scrollbar styling - fixed position overlay */
+html,
+body {
+  scrollbar-width: thin;
+  scrollbar-color: #31572c rgba(49, 87, 44, 0.534);
+  position: relative;
+}
+
+/* Also update .scrollable-wrapper to work with fixed scrollbar */
+.scrollable-wrapper::-webkit-scrollbar,
+*::-webkit-scrollbar {
+  display: none;
+}
+
+
+.forc{
+  cursor: pointer;
+}
+
+/* ============================================
+   TESTIMONIALS SECTION IMPROVEMENTS
+ 
