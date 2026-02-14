@@ -137,6 +137,12 @@ body {
   cursor: pointer;
 }
 
-/* ============================================
-   TESTIMONIALS SECTION IMPROVEMENTS
- 
+@keyframes shine {
+  100% {
+    left: 125%;
+  }
+}
+
+.animate-shine {
+  animation: shine 0.8s ease-in-out;
+}
