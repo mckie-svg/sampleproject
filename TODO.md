@@ -1,17 +1,23 @@
-# TODO - Scroll Indicator Update
+# Code Cleanup TODO List
 
-## Task: Move scroll indicator to bottom center and change color to match theme
+## index.html Cleanup
+- [ ] 1. Remove empty button `<button id="hireMeBtn">`
+- [ ] 2. Remove unused Chart.js CDN
+- [ ] 3. Remove unnecessary Tailwind CDN (keep only output.css)
+- [ ] 4. Remove duplicate nested divs in home section
+- [ ] 5. Fix wrong link `#portfolio` → `#projects`
+- [ ] 6. Remove duplicate JavaScript (mobile menu functions already in script.js)
+- [ ] 7. Remove duplicate inline styles that are in style.css
 
-### Status: COMPLETED ✓
+## style.css Cleanup
+- [ ] 1. Remove unused card classes (.card, .card-icon, .card-title, .card-text)
+- [ ] 2. Remove duplicate social-links class (already in index.html inline)
 
-### Changes Made:
-1. [x] Updated scroll indicator position from `bottom-10` to `bottom-6` (closer to absolute bottom)
-2. [x] Changed color from white (`text-white/80`) to theme green (`text-[#31572c]`)
-3. [x] Applied same color change to hover state
+## script.js Cleanup
+- [ ] 1. Remove duplicate openCVModal() and closeCVModal() functions
+- [ ] 2. Fix freezeBackground function reference
+- [ ] 3. Remove duplicate mobile menu functions (already defined in script.js)
 
-### Technical Details:
-- Original: `absolute bottom-10 left-1/2 transform -translate-x-1/2` with `text-white/80 hover:text-white`
-- New: `absolute bottom-6 left-1/2 transform -translate-x-1/2` with `text-[#31572c] hover:text-[#31572c]`
-
-### Theme Color Used:
-- #31572c (primary green used in CTA section, skill tags, and scrollbar)
+## Performance Improvements
+- [ ] 1. Add lazy loading to images
+- [ ] 2. Remove unused Google Fonts
