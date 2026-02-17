@@ -15,6 +15,9 @@
  
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Gabarito:wght@400..900&family=Geom:ital,wght@0,300..900;1,300..900&family=Lexend+Deca:wght@100..900&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Titan+One&family=Zen+Dots&display=swap" rel="stylesheet">
@@ -1123,32 +1126,42 @@
             <button onclick="closeContactModal()" class="w-10 h-10 flex items-center justify-center rounded-full bg-white border border-slate-200 text-slate-400 hover:text-red-500 transition-all">&times;</button>
         </div>
 
-        <form action="https://formspree.io/f/your-id" method="POST" class="p-8 overflow-y-auto space-y-6">
+        <form id="contact-form" class="p-8 overflow-y-auto space-y-6" novalidate>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                     <label class="block text-xs font-black uppercase tracking-widest text-slate-400 mb-2">Your Name</label>
-                    <input type="text" name="name" required class="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-2xl focus:border-blue-600 focus:ring-0 transition-all outline-none" placeholder="John Doe">
+                    <input type="text" id="name" name="name" required class="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-2xl focus:border-blue-600 focus:ring-0 transition-all outline-none" placeholder="Enter your name">
+                    <p class="text-red-500 text-[10px] font-bold uppercase tracking-wider mt-2 hidden error-msg">Please enter your name</p>
                 </div>
                 <div>
                     <label class="block text-xs font-black uppercase tracking-widest text-slate-400 mb-2">Email Address</label>
-                    <input type="email" name="email" required class="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-2xl focus:border-blue-600 focus:ring-0 transition-all outline-none" placeholder="john@company.com">
+                    <input type="email" id="email" name="email" required class="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-2xl focus:border-blue-600 focus:ring-0 transition-all outline-none" placeholder="example@gmail.com">
+                    <p class="text-red-500 text-[10px] font-bold uppercase tracking-wider mt-2 hidden error-msg">Please enter a valid email</p>
                 </div>
             </div>
 
             <div>
                 <label class="block text-xs font-black uppercase tracking-widest text-slate-400 mb-2">What do you need help with?</label>
-                <select name="service" class="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-2xl focus:border-blue-600 focus:ring-0 transition-all outline-none appearance-none">
+                <select id="service-select" name="service" class="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-2xl focus:border-blue-600 focus:ring-0 transition-all outline-none appearance-none">
                     <option>Real Estate Support</option>
                     <option>Video Editing</option>
                     <option>Graphic Design</option>
                     <option>General Admin</option>
                     <option>Social Media Management</option>
+                    <option>Other</option>
                 </select>
+            </div>
+
+            <div id="other-service-container" class="hidden">
+                <label class="block text-xs font-black uppercase tracking-widest text-slate-400 mb-2">Please Specify</label>
+                <input type="text" id="other_service" name="other_service" class="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-2xl focus:border-blue-600 focus:ring-0 transition-all outline-none" placeholder="Please specify...">
+                <p class="text-red-500 text-[10px] font-bold uppercase tracking-wider mt-2 hidden error-msg">Please specify your request</p>
             </div>
 
             <div>
                 <label class="block text-xs font-black uppercase tracking-widest text-slate-400 mb-2">Project Details</label>
                 <textarea id="comment-section" name="message" rows="4" required class="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-2xl focus:border-blue-600 focus:ring-0 transition-all outline-none resize-none" placeholder="Briefly describe your goals..."></textarea>
+                <p class="text-red-500 text-[10px] font-bold uppercase tracking-wider mt-2 hidden error-msg">Please provide project details</p>
             </div>
 
             <button type="submit" class="w-full py-5 bg-blue-600 hover:bg-blue-700 text-white font-black rounded-2xl shadow-lg shadow-blue-100 transition-all transform hover:-translate-y-1 active:scale-95">
