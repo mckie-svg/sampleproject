@@ -389,81 +389,71 @@
       </p>
     </div>
 
-    <div class="flex flex-col lg:flex-row items-start justify-between gap-12 lg:gap-16">
+    <div class="flex flex-col lg:flex-row items-start justify-between gap-6 lg:gap-16">
 
-      <div class="w-full lg:w-1/3 flex justify-center lg:justify-start">
-        <div class="relative group">
-          <div class="absolute -inset-4 bg-gradient-to-tr from-blue-200 to-indigo-100 rounded-[2.5rem] blur-xl opacity-40 group-hover:opacity-70 transition duration-700"></div>
-          <div class="relative z-10 p-3 bg-white border border-slate-100 shadow-[0_40px_80px_-15px_rgba(0,0,0,0.1)] rounded-[2.2rem]">
-            <img src="./Pictures/profile.jpg" alt="Glester Seining" class="w-64 h-80 object-cover rounded-[1.6rem] grayscale-[15%] group-hover:grayscale-0 group-hover:scale-[1.02] transition duration-700 ease-out" loading="lazy">
-          </div>
+  <div class="w-full flex flex-row items-stretch justify-start gap-6">
+    
+    <div class="w-5/12 lg:w-1/3 shrink-0">
+      <div class="relative">
+        <div class="absolute -inset-2 bg-gradient-to-tr from-blue-100 to-indigo-50 rounded-[2rem] blur-lg opacity-30"></div>
+        <div class="relative z-10 p-2 bg-white border border-slate-100 shadow-lg rounded-[1.8rem]">
+          <img src="./Pictures/profile.jpg" alt="Glester Seining" class="w-full h-auto aspect-[4/5] object-cover rounded-[1.4rem]" loading="lazy">
+        </div>
+      </div>
+    </div>
+
+    <div class="flex flex-col justify-between py-1">
+      
+      <div class="space-y-3">
+        <div>
+          <p class="text-[10px] uppercase tracking-widest text-slate-400 font-bold">Location</p>
+          <p class="text-slate-800 font-bold text-sm tracking-tight">Philippines</p>
+        </div>
+
+        <div>
+          <p class="text-[10px] uppercase tracking-widest text-slate-400 font-bold">Email</p>
+          <p class="text-slate-700 font-semibold text-[11px] break-all leading-tight">glesterreva07@gmail.com</p>
+        </div>
+
+        <div>
+          <p class="text-[10px] uppercase tracking-widest text-slate-400 font-bold">Designation</p>
+          <p class="text-slate-900 font-black text-sm tracking-tight">Virtual Assistant</p>
         </div>
       </div>
 
-      <div class="w-full lg:w-5/12 flex flex-col space-y-5">
-        
-        <div class="flex items-center gap-5 group p-3 rounded-2xl hover:bg-slate-50 transition-all duration-300">
-          <div class="w-12 h-12 flex-shrink-0 flex items-center justify-center rounded-2xl bg-white shadow-sm border border-slate-200 group-hover:border-blue-400 transition-all">
-            <img src="./Pictures/placeholder.png" alt="Location" class="w-5 h-5 opacity-90 group-hover:scale-110 transition-transform">
-          </div>
-          <p class="text-slate-800 font-bold text-lg tracking-tight">Philippines</p>
-        </div>
-        
-        <div class="flex items-center gap-5 group p-3 rounded-2xl hover:bg-slate-50 transition-all duration-300">
-          <div class="w-12 h-12 flex-shrink-0 flex items-center justify-center rounded-2xl bg-white shadow-sm border border-slate-200 group-hover:border-blue-400 transition-all">
-            <img src="./Pictures/mail.png" alt="Email" class="w-5 h-5 opacity-90 group-hover:scale-110 transition-transform">
-          </div>
-          <p class="text-slate-700 font-semibold break-all">glesterreva07@gmail.com</p>
-        </div>
-
-        <div class="flex items-center gap-5 p-4 rounded-2xl bg-slate-50 border border-slate-200/60 transition-all duration-300">
-          <div class="w-12 h-12 flex-shrink-0 flex items-center justify-center rounded-xl bg-white border border-slate-200">
-            <img src="./Pictures/project-manager.png" alt="Role" class="w-6 h-6 object-contain opacity-60">
-          </div>
-          <div>
-            <p class="font-bold text-[10px] uppercase tracking-[0.2em] text-slate-400">Designation</p>
-            <p class="text-slate-900 font-black text-lg tracking-tight">Virtual Assistant</p>
-          </div>
-        </div>
-
-        <div class="pt-2">
-          <button onclick="openCVModal()" 
-                  class="group relative w-full flex items-center justify-center gap-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-5 font-black rounded-[1.5rem] shadow-[0_20px_40px_-10px_rgba(37,99,235,0.4)] transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_25px_50px_-12px_rgba(37,99,235,0.5)] active:scale-95">
-              
-              <div class="w-10 h-10 flex items-center justify-center rounded-xl bg-white/20 backdrop-blur-md border border-white/30 group-hover:bg-white/30 transition-all">
-                  <img src="./Pictures/download.png" alt="Download Icon" class="w-5 h-5 brightness-0 invert group-hover:scale-110 transition-transform">
-              </div>
-
-              <div class="text-left">
-                <span class="block text-[10px] uppercase tracking-[0.2em] text-blue-100 opacity-80">Get My Resume</span>
-                <span class="text-lg tracking-wide">Download CV</span>
-              </div>
-
-              <div class="absolute inset-0 rounded-[1.5rem] overflow-hidden">
-                <div class="absolute top-0 -left-[100%] w-1/2 h-full bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-[-25deg] group-hover:animate-shine"></div>
-              </div>
-          </button>
-        </div>
-      </div>
-
-      <div class="w-full lg:w-auto flex flex-row lg:flex-col justify-center lg:justify-start items-center gap-5 lg:pt-2">
-        <a href="#" class="group relative w-14 h-14 flex items-center justify-center bg-white rounded-[1.1rem] border-2 border-slate-200 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:border-blue-600 hover:shadow-xl hover:shadow-blue-100">
-            <img src="./Pictures/instagram.png" class="w-6 h-6 object-contain transition-all duration-500 grayscale-0 md:grayscale md:opacity-40 group-hover:grayscale-0 group-hover:opacity-100" alt="Github">
-            <span class="absolute -top-10 left-1/2 -translate-x-1/2 px-3 py-1 bg-slate-900 text-white text-[10px] font-bold rounded-lg opacity-0 group-hover:opacity-100 transition-opacity hidden md:block">Instagram</span>
+      <div class="flex flex-row justify-start items-center gap-2.5 mt-4">
+        <a href="#" class="w-10 h-10 flex items-center justify-center bg-white rounded-xl border border-slate-200 shadow-sm shrink-0">
+            <img src="./Pictures/instagram.png" class="w-5 h-5 object-contain" alt="Instagram">
         </a>
-
-        <a href="#" class="group relative w-14 h-14 flex items-center justify-center bg-white rounded-[1.1rem] border-2 border-slate-200 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:border-blue-600 hover:shadow-xl hover:shadow-blue-100">
-            <img src="./Pictures/linkedin.png" class="w-6 h-6 object-contain transition-all duration-500 grayscale-0 md:grayscale md:opacity-40 group-hover:grayscale-0 group-hover:opacity-100" alt="LinkedIn">
-            <span class="absolute -top-10 left-1/2 -translate-x-1/2 px-3 py-1 bg-slate-900 text-white text-[10px] font-bold rounded-lg opacity-0 group-hover:opacity-100 transition-opacity hidden md:block">LinkedIn</span>
+        <a href="#" class="w-10 h-10 flex items-center justify-center bg-white rounded-xl border border-slate-200 shadow-sm shrink-0">
+            <img src="./Pictures/linkedin.png" class="w-5 h-5 object-contain" alt="LinkedIn">
         </a>
-
-        <a href="https://web.facebook.com/glester.senining" target="_blank" class="group relative w-14 h-14 flex items-center justify-center bg-white rounded-[1.1rem] border-2 border-slate-200 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:border-blue-600 hover:shadow-xl hover:shadow-blue-100">
-            <img src="./Pictures/facebook.png" class="w-6 h-6 object-contain transition-all duration-500 grayscale-0 md:grayscale md:opacity-40 group-hover:grayscale-0 group-hover:opacity-100" alt="Facebook">
-            <span class="absolute -top-10 left-1/2 -translate-x-1/2 px-3 py-1 bg-slate-900 text-white text-[10px] font-bold rounded-lg opacity-0 group-hover:opacity-100 transition-opacity hidden md:block">Facebook</span>
+        <a href="https://web.facebook.com/glester.senining" target="_blank" class="w-10 h-10 flex items-center justify-center bg-white rounded-xl border border-slate-200 shadow-sm shrink-0">
+            <img src="./Pictures/facebook.png" class="w-5 h-5 object-contain" alt="Facebook">
         </a>
       </div>
 
     </div>
+  </div>
+
+  <div class="w-full">
+    <button onclick="openCVModal()" 
+            class="group relative w-full flex items-center justify-center gap-4 bg-blue-600 text-white px-6 py-5 rounded-2xl shadow-xl transition-all active:scale-[0.98]">
+        <div class="w-9 h-9 flex items-center justify-center rounded-lg bg-white/10 border border-white/20">
+            <img src="./Pictures/download.png" alt="Download Icon" class="w-4 h-4 brightness-0 invert">
+        </div>
+       <div class="text-left">
+  <span class="block text-[10px] uppercase tracking-[0.15em] text-blue-100/60 font-medium mb-0.5">
+    Download my Resume
+  </span>
+  <span class="text-[17px] font-extrabold tracking-tight text-white leading-none">
+    Download CV
+  </span>
+</div>
+    </button>
+  </div>
+
+</div>
 
     <ul id="stats" class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto mt-24">
       <li class="p-8 bg-white/70 backdrop-blur-md border border-slate-200 shadow-xl rounded-[2rem] flex flex-col items-center text-center group hover:border-blue-400 transition-all duration-500">
@@ -487,33 +477,32 @@
   <div class="absolute top-0 left-1/4 w-96 h-96 bg-blue-100/30 blur-[120px] rounded-full -z-10"></div>
   <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-indigo-100/30 blur-[120px] rounded-full -z-10"></div>
 
-  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto px-4 lg:px-8">
     
-    <div class="text-center mb-24">
+    <div class="text-center mb-16 md:mb-24">
       <span class="inline-block px-4 py-1.5 mb-6 text-[11px] font-black tracking-[0.3em] uppercase text-blue-600 bg-blue-50 rounded-full border border-blue-100">
         Expertise
       </span>
-      <h2 class="text-4xl md:text-5xl font-black text-slate-900 tracking-tight leading-none mb-6">
+      <h2 class="text-3xl md:text-5xl font-black text-slate-900 tracking-tight leading-none mb-6">
         Professional Solutions
       </h2>
-      <p class="text-slate-500 max-w-2xl mx-auto text-lg leading-relaxed">
+      <p class="text-slate-500 max-w-2xl mx-auto text-base md:text-lg leading-relaxed px-4">
         Comprehensive virtual assistance tailored to scale your business operations, creative output, and administrative efficiency.
       </p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-8">
 
-      <!-- Service 1 -->
-      <div class="group bg-white rounded-[2rem] p-2 border border-slate-200 shadow-sm hover:shadow-xl hover:border-blue-300 transition-all duration-500 flex flex-col h-full">
-        <div class="relative h-52 rounded-[1.5rem] overflow-hidden mb-6 shrink-0">
+      <div class="group bg-white rounded-[1.5rem] md:rounded-[2rem] p-1.5 md:p-2 border border-slate-200 shadow-sm hover:shadow-xl hover:border-blue-300 transition-all duration-500 flex flex-col h-full">
+        <div class="relative h-32 md:h-52 rounded-[1.2rem] md:rounded-[1.5rem] overflow-hidden mb-4 md:mb-6 shrink-0">
           <img src="https://www.vgrow.co/wp-content/uploads/2022/06/Real-Estate-Virtual-Assistants-Why-Do-You-Need-Them-1.jpg" alt="Real Estate Virtual Assistant" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
           <div class="absolute inset-0 bg-slate-900/10 group-hover:bg-transparent transition-colors duration-500"></div>
         </div>
-        <div class="px-4 pb-6 flex flex-col flex-1">
-          <h3 class="text-2xl font-black text-slate-900 mb-3">Real Estate Support</h3>
-          <p class="text-slate-500 text-sm leading-relaxed mb-6">End-to-end transaction coordination and lead management for high-performing agents.</p>
+        <div class="px-2 md:px-4 pb-4 md:pb-6 flex flex-col flex-1">
+          <h3 class="text-lg md:text-2xl font-black text-slate-900 mb-2 md:mb-3 leading-tight">Real Estate Support</h3>
+          <p class="text-slate-500 text-[11px] md:text-sm leading-relaxed mb-4 md:mb-6 line-clamp-2 md:line-clamp-none">End-to-end transaction coordination and lead management.</p>
           
-          <ul class="space-y-3 mb-8 flex-1">
+          <ul class="space-y-2 md:space-y-3 mb-6 md:mb-8 flex-1 hidden md:block">
             <li class="flex items-start gap-3 text-sm text-slate-600 font-medium">
               <svg class="w-5 h-5 text-blue-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
               Listing Management & MLS
@@ -522,157 +511,83 @@
               <svg class="w-5 h-5 text-blue-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
               CRM Database Maintenance
             </li>
-            <li class="flex items-start gap-3 text-sm text-slate-600 font-medium">
-              <svg class="w-5 h-5 text-blue-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-              Client Communication
-            </li>
-            <li class="flex items-start gap-3 text-sm text-slate-600 font-medium">
-              <svg class="w-5 h-5 text-blue-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-              Appointment Scheduling
-            </li>
           </ul>
 
-          <button onclick="openContactModal('Real Estate Support')" class="w-full py-3 rounded-xl bg-slate-50 text-slate-900 font-bold text-sm border border-slate-200 group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-600 transition-all shadow-sm group-hover:shadow-lg">
+          <button onclick="openContactModal('Real Estate Support')" class="w-full py-2.5 md:py-3 rounded-lg md:rounded-xl bg-blue-600 text-white font-bold text-[11px] md:text-sm border border-blue-600 hover:bg-blue-700 hover:border-blue-700 transition-all shadow-md hover:shadow-lg">
             Inquire Now
           </button>
         </div>
       </div>
 
-      <!-- Service 2 -->
-      <div class="group bg-white rounded-[2rem] p-2 border border-slate-200 shadow-sm hover:shadow-xl hover:border-blue-300 transition-all duration-500 flex flex-col h-full">
-        <div class="relative h-52 rounded-[1.5rem] overflow-hidden mb-6 shrink-0">
+      <div class="group bg-white rounded-[1.5rem] md:rounded-[2rem] p-1.5 md:p-2 border border-slate-200 shadow-sm hover:shadow-xl hover:border-blue-300 transition-all duration-500 flex flex-col h-full">
+        <div class="relative h-32 md:h-52 rounded-[1.2rem] md:rounded-[1.5rem] overflow-hidden mb-4 md:mb-6 shrink-0">
           <img src="./Pictures/graphic_design.jpg" alt="Graphic Design" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
           <div class="absolute inset-0 bg-slate-900/10 group-hover:bg-transparent transition-colors duration-500"></div>
         </div>
-        <div class="px-4 pb-6 flex flex-col flex-1">
-          <h3 class="text-2xl font-black text-slate-900 mb-3">Graphic Design</h3>
-          <p class="text-slate-500 text-sm leading-relaxed mb-6">Visual storytelling that captures your brand identity and engages your audience.</p>
+        <div class="px-2 md:px-4 pb-4 md:pb-6 flex flex-col flex-1">
+          <h3 class="text-lg md:text-2xl font-black text-slate-900 mb-2 md:mb-3 leading-tight">Graphic Design</h3>
+          <p class="text-slate-500 text-[11px] md:text-sm leading-relaxed mb-4 md:mb-6 line-clamp-2 md:line-clamp-none">Visual storytelling that captures your brand identity.</p>
           
-          <ul class="space-y-3 mb-8 flex-1">
+          <ul class="space-y-2 md:space-y-3 mb-6 md:mb-8 flex-1 hidden md:block">
             <li class="flex items-start gap-3 text-sm text-slate-600 font-medium">
               <svg class="w-5 h-5 text-blue-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
               Social Media Assets
             </li>
-            <li class="flex items-start gap-3 text-sm text-slate-600 font-medium">
-              <svg class="w-5 h-5 text-blue-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-              Brand Identity Kits
-            </li>
-            <li class="flex items-start gap-3 text-sm text-slate-600 font-medium">
-              <svg class="w-5 h-5 text-blue-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-              Marketing Materials
-            </li>
-            <li class="flex items-start gap-3 text-sm text-slate-600 font-medium">
-              <svg class="w-5 h-5 text-blue-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-              Presentation Decks
-            </li>
           </ul>
 
-          <button onclick="openContactModal('Graphic Design')" class="w-full py-3 rounded-xl bg-slate-50 text-slate-900 font-bold text-sm border border-slate-200 group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-600 transition-all shadow-sm group-hover:shadow-lg">
+          <button onclick="openContactModal('Graphic Design')" class="w-full py-2.5 md:py-3 rounded-lg md:rounded-xl bg-blue-600 text-white font-bold text-[11px] md:text-sm border border-blue-600 hover:bg-blue-700 hover:border-blue-700 transition-all shadow-md hover:shadow-lg">
             Inquire Now
           </button>
         </div>
       </div>
 
-      <!-- Service 3 -->
-      <div class="group bg-white rounded-[2rem] p-2 border border-slate-200 shadow-sm hover:shadow-xl hover:border-blue-300 transition-all duration-500 flex flex-col h-full">
-        <div class="relative h-52 rounded-[1.5rem] overflow-hidden mb-6 shrink-0">
+      <div class="group bg-white rounded-[1.5rem] md:rounded-[2rem] p-1.5 md:p-2 border border-slate-200 shadow-sm hover:shadow-xl hover:border-blue-300 transition-all duration-500 flex flex-col h-full">
+        <div class="relative h-32 md:h-52 rounded-[1.2rem] md:rounded-[1.5rem] overflow-hidden mb-4 md:mb-6 shrink-0">
           <img src="./Pictures/video editing.jpg" alt="Video Editing" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
           <div class="absolute inset-0 bg-slate-900/10 group-hover:bg-transparent transition-colors duration-500"></div>
         </div>
-        <div class="px-4 pb-6 flex flex-col flex-1">
-          <h3 class="text-2xl font-black text-slate-900 mb-3">Video Editing</h3>
-          <p class="text-slate-500 text-sm leading-relaxed mb-6">High-retention video content optimized for social media growth and ads.</p>
+        <div class="px-2 md:px-4 pb-4 md:pb-6 flex flex-col flex-1">
+          <h3 class="text-lg md:text-2xl font-black text-slate-900 mb-2 md:mb-3 leading-tight">Video Editing</h3>
+          <p class="text-slate-500 text-[11px] md:text-sm leading-relaxed mb-4 md:mb-6 line-clamp-2 md:line-clamp-none">High-retention video content for social media growth.</p>
           
-          <ul class="space-y-3 mb-8 flex-1">
+          <ul class="space-y-2 md:space-y-3 mb-6 md:mb-8 flex-1 hidden md:block">
             <li class="flex items-start gap-3 text-sm text-slate-600 font-medium">
               <svg class="w-5 h-5 text-blue-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
               Reels & TikTok Editing
             </li>
-            <li class="flex items-start gap-3 text-sm text-slate-600 font-medium">
-              <svg class="w-5 h-5 text-blue-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-              YouTube Long-form
-            </li>
-            <li class="flex items-start gap-3 text-sm text-slate-600 font-medium">
-              <svg class="w-5 h-5 text-blue-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-              Color Grading & Audio
-            </li>
-            <li class="flex items-start gap-3 text-sm text-slate-600 font-medium">
-              <svg class="w-5 h-5 text-blue-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-              Motion Graphics
-            </li>
           </ul>
 
-          <button onclick="openContactModal('Video Editing')" class="w-full py-3 rounded-xl bg-slate-50 text-slate-900 font-bold text-sm border border-slate-200 group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-600 transition-all shadow-sm group-hover:shadow-lg">
+          <button onclick="openContactModal('Video Editing')" class="w-full py-2.5 md:py-3 rounded-lg md:rounded-xl bg-blue-600 text-white font-bold text-[11px] md:text-sm border border-blue-600 hover:bg-blue-700 hover:border-blue-700 transition-all shadow-md hover:shadow-lg">
             Inquire Now
           </button>
         </div>
       </div>
 
-      <!-- Service 4 -->
-      <div class="group bg-white rounded-[2rem] p-2 border border-slate-200 shadow-sm hover:shadow-xl hover:border-blue-300 transition-all duration-500 flex flex-col h-full">
-        <div class="relative h-52 rounded-[1.5rem] overflow-hidden mb-6 shrink-0">
+      <div class="group bg-white rounded-[1.5rem] md:rounded-[2rem] p-1.5 md:p-2 border border-slate-200 shadow-sm hover:shadow-xl hover:border-blue-300 transition-all duration-500 flex flex-col h-full">
+        <div class="relative h-32 md:h-52 rounded-[1.2rem] md:rounded-[1.5rem] overflow-hidden mb-4 md:mb-6 shrink-0">
           <img src="./Pictures/Social Media Manager.jpg" alt="Social Media Management" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
           <div class="absolute inset-0 bg-slate-900/10 group-hover:bg-transparent transition-colors duration-500"></div>
         </div>
-        <div class="px-4 pb-6 flex flex-col flex-1">
-          <h3 class="text-2xl font-black text-slate-900 mb-3">Social Media</h3>
-          <p class="text-slate-500 text-sm leading-relaxed mb-6">Strategic content planning and community management to build your online presence.</p>
+        <div class="px-2 md:px-4 pb-4 md:pb-6 flex flex-col flex-1">
+          <h3 class="text-lg md:text-2xl font-black text-slate-900 mb-2 md:mb-3 leading-tight">Social Media</h3>
+          <p class="text-slate-500 text-[11px] md:text-sm leading-relaxed mb-4 md:mb-6 line-clamp-2 md:line-clamp-none">Strategic content planning and community management.</p>
           
-          <ul class="space-y-3 mb-8 flex-1">
-            <li class="flex items-start gap-3 text-sm text-slate-600 font-medium">
-              <svg class="w-5 h-5 text-blue-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-              Content Strategy
-            </li>
-            <li class="flex items-start gap-3 text-sm text-slate-600 font-medium">
-              <svg class="w-5 h-5 text-blue-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-              Community Engagement
-            </li>
-            <li class="flex items-start gap-3 text-sm text-slate-600 font-medium">
-              <svg class="w-5 h-5 text-blue-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-              Analytics Reporting
-            </li>
-            <li class="flex items-start gap-3 text-sm text-slate-600 font-medium">
-              <svg class="w-5 h-5 text-blue-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-              Copywriting & Hashtags
-            </li>
-          </ul>
-
-          <button onclick="openContactModal('Social Media Management')" class="w-full py-3 rounded-xl bg-slate-50 text-slate-900 font-bold text-sm border border-slate-200 group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-600 transition-all shadow-sm group-hover:shadow-lg">
+          <button onclick="openContactModal('Social Media Management')" class="w-full py-2.5 md:py-3 rounded-lg md:rounded-xl bg-blue-600 text-white font-bold text-[11px] md:text-sm border border-blue-600 hover:bg-blue-700 hover:border-blue-700 transition-all shadow-md hover:shadow-lg">
             Inquire Now
           </button>
         </div>
       </div>
 
-      <!-- Service 5 -->
-      <div class="group bg-white rounded-[2rem] p-2 border border-slate-200 shadow-sm hover:shadow-xl hover:border-blue-300 transition-all duration-500 flex flex-col h-full">
-        <div class="relative h-52 rounded-[1.5rem] overflow-hidden mb-6 shrink-0">
+      <div class="group bg-white rounded-[1.5rem] md:rounded-[2rem] p-1.5 md:p-2 border border-slate-200 shadow-sm hover:shadow-xl hover:border-blue-300 transition-all duration-500 flex flex-col h-full">
+        <div class="relative h-32 md:h-52 rounded-[1.2rem] md:rounded-[1.5rem] overflow-hidden mb-4 md:mb-6 shrink-0">
           <img src="./Pictures/Adiministrative_Support.jpg" alt="Administrative Support" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
           <div class="absolute inset-0 bg-slate-900/10 group-hover:bg-transparent transition-colors duration-500"></div>
         </div>
-        <div class="px-4 pb-6 flex flex-col flex-1">
-          <h3 class="text-2xl font-black text-slate-900 mb-3">Admin Support</h3>
-          <p class="text-slate-500 text-sm leading-relaxed mb-6">Reliable executive assistance to organize your workflow and reclaim your time.</p>
+        <div class="px-2 md:px-4 pb-4 md:pb-6 flex flex-col flex-1">
+          <h3 class="text-lg md:text-2xl font-black text-slate-900 mb-2 md:mb-3 leading-tight">Admin Support</h3>
+          <p class="text-slate-500 text-[11px] md:text-sm leading-relaxed mb-4 md:mb-6 line-clamp-2 md:line-clamp-none">Reliable executive assistance to organize your workflow.</p>
           
-          <ul class="space-y-3 mb-8 flex-1">
-            <li class="flex items-start gap-3 text-sm text-slate-600 font-medium">
-              <svg class="w-5 h-5 text-blue-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-              Inbox Management
-            </li>
-            <li class="flex items-start gap-3 text-sm text-slate-600 font-medium">
-              <svg class="w-5 h-5 text-blue-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-              Calendar & Scheduling
-            </li>
-            <li class="flex items-start gap-3 text-sm text-slate-600 font-medium">
-              <svg class="w-5 h-5 text-blue-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-              Data Entry & Research
-            </li>
-            <li class="flex items-start gap-3 text-sm text-slate-600 font-medium">
-              <svg class="w-5 h-5 text-blue-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-              Invoicing & Billing
-            </li>
-          </ul>
-
-          <button onclick="openContactModal('General Admin')" class="w-full py-3 rounded-xl bg-slate-50 text-slate-900 font-bold text-sm border border-slate-200 group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-600 transition-all shadow-sm group-hover:shadow-lg">
+          <button onclick="openContactModal('General Admin')" class="w-full py-2.5 md:py-3 rounded-lg md:rounded-xl bg-blue-600 text-white font-bold text-[11px] md:text-sm border border-blue-600 hover:bg-blue-700 hover:border-blue-700 transition-all shadow-md hover:shadow-lg">
             Inquire Now
           </button>
         </div>
@@ -681,6 +596,11 @@
     </div>
   </div>
 </section>
+
+
+<!-------->
+
+
 <section id="projects" class="relative py-16 md:py-32 overflow-hidden scroll-animate bg-white/95 border-t border-white/50">
   <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-50/50 blur-[120px] rounded-full -z-10"></div>
 
@@ -698,28 +618,27 @@
       </p>
     </div>
 
-    <!-- Project Filter Buttons -->
     <div class="flex flex-wrap justify-center gap-3 mb-12">
         <button class="filter-btn bg-blue-600 text-white shadow-lg shadow-blue-200 px-6 py-2 rounded-full text-xs font-bold uppercase tracking-widest transition-all hover:-translate-y-1" data-filter="all">All</button>
-        <button class="filter-btn bg-white text-slate-500 border border-slate-200 px-6 py-2 rounded-full text-xs font-bold uppercase tracking-widest transition-all hover:border-blue-400 hover:text-blue-600 hover:-translate-y-1" data-filter="real-estate">Real Estate</button>
-        <button class="filter-btn bg-white text-slate-500 border border-slate-200 px-6 py-2 rounded-full text-xs font-bold uppercase tracking-widest transition-all hover:border-blue-400 hover:text-blue-600 hover:-translate-y-1" data-filter="social-media">Social Media</button>
-        <button class="filter-btn bg-white text-slate-500 border border-slate-200 px-6 py-2 rounded-full text-xs font-bold uppercase tracking-widest transition-all hover:border-blue-400 hover:text-blue-600 hover:-translate-y-1" data-filter="video">Video</button>
-        <button class="filter-btn bg-white text-slate-500 border border-slate-200 px-6 py-2 rounded-full text-xs font-bold uppercase tracking-widest transition-all hover:border-blue-400 hover:text-blue-600 hover:-translate-y-1" data-filter="design">Design</button>
-        <button class="filter-btn bg-white text-slate-500 border border-slate-200 px-6 py-2 rounded-full text-xs font-bold uppercase tracking-widest transition-all hover:border-blue-400 hover:text-blue-600 hover:-translate-y-1" data-filter="admin">Admin</button>
+        <button class="filter-btn bg-slate-100 text-slate-600 border border-slate-200 px-6 py-2 rounded-full text-xs font-bold uppercase tracking-widest transition-all hover:bg-white hover:border-blue-400 hover:text-blue-600 hover:-translate-y-1" data-filter="real-estate">Real Estate</button>
+        <button class="filter-btn bg-slate-100 text-slate-600 border border-slate-200 px-6 py-2 rounded-full text-xs font-bold uppercase tracking-widest transition-all hover:bg-white hover:border-blue-400 hover:text-blue-600 hover:-translate-y-1" data-filter="social-media">Social Media</button>
+        <button class="filter-btn bg-slate-100 text-slate-600 border border-slate-200 px-6 py-2 rounded-full text-xs font-bold uppercase tracking-widest transition-all hover:bg-white hover:border-blue-400 hover:text-blue-600 hover:-translate-y-1" data-filter="video">Video</button>
+        <button class="filter-btn bg-slate-100 text-slate-600 border border-slate-200 px-6 py-2 rounded-full text-xs font-bold uppercase tracking-widest transition-all hover:bg-white hover:border-blue-400 hover:text-blue-600 hover:-translate-y-1" data-filter="design">Design</button>
+        <button class="filter-btn bg-slate-100 text-slate-600 border border-slate-200 px-6 py-2 rounded-full text-xs font-bold uppercase tracking-widest transition-all hover:bg-white hover:border-blue-400 hover:text-blue-600 hover:-translate-y-1" data-filter="admin">Admin</button>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+    <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-10">
 
-      <div class="project-item cursor-pointer group relative bg-white rounded-[2.5rem] border border-slate-200 overflow-hidden shadow-[0_15px_40px_-15px_rgba(0,0,0,0.08)] hover:shadow-[0_40px_80px_-20px_rgba(37,99,235,0.15)] hover:border-blue-400 transition-all duration-700 ease-out" data-category="real-estate">
-        <div class="relative h-56 overflow-hidden">
+      <div class="project-item cursor-pointer group relative bg-white rounded-[1.5rem] md:rounded-[2.5rem] border border-slate-200 overflow-hidden shadow-[0_15px_40px_-15px_rgba(0,0,0,0.08)] hover:shadow-[0_40px_80px_-20px_rgba(37,99,235,0.15)] hover:border-blue-400 transition-all duration-700 ease-out" data-category="real-estate">
+        <div class="relative h-40 md:h-56 overflow-hidden">
           <img src="./Pictures/real estate_project.jpg" alt="Real Estate Lead Management" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" loading="lazy">
           <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-bold text-slate-900 border border-white/50 shadow-sm">
             Real Estate
           </div>
         </div>
-        <div class="p-8">
-          <h3 class="text-xl font-black text-slate-900 mb-3 tracking-tight group-hover:text-blue-600 transition-colors">Lead Management Optimization</h3>
-          <p class="text-slate-600 text-sm leading-relaxed mb-6">
+        <div class="p-5 md:p-8">
+          <h3 class="text-sm md:text-xl font-black text-slate-900 mb-3 tracking-tight group-hover:text-blue-600 transition-colors leading-tight">Lead Management Optimization</h3>
+          <p class="text-slate-600 text-[11px] md:text-sm leading-relaxed mb-6">
             Managed client communications and listings, resulting in a <span class="text-blue-600 font-bold">40% improvement</span> in lead response times.
           </p>
           <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-50">
@@ -729,16 +648,16 @@
         </div>
       </div>
 
-      <div class="project-item cursor-pointer group relative bg-white rounded-[2.5rem] border border-slate-200 overflow-hidden shadow-[0_15px_40px_-15px_rgba(0,0,0,0.08)] hover:shadow-[0_40px_80px_-20px_rgba(37,99,235,0.15)] hover:border-blue-400 transition-all duration-700 ease-out" data-category="social-media">
-        <div class="relative h-56 overflow-hidden">
+      <div class="project-item cursor-pointer group relative bg-white rounded-[1.5rem] md:rounded-[2.5rem] border border-slate-200 overflow-hidden shadow-[0_15px_40px_-15px_rgba(0,0,0,0.08)] hover:shadow-[0_40px_80px_-20px_rgba(37,99,235,0.15)] hover:border-blue-400 transition-all duration-700 ease-out" data-category="social-media">
+        <div class="relative h-40 md:h-56 overflow-hidden">
           <img src="./Pictures/instagram.jpg" alt="Instagram Content Creation" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" loading="lazy">
           <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-bold text-slate-900 border border-white/50 shadow-sm">
             Social Media
           </div>
         </div>
-        <div class="p-8">
-          <h3 class="text-xl font-black text-slate-900 mb-3 tracking-tight group-hover:text-blue-600 transition-colors">Content Strategy & Design</h3>
-          <p class="text-slate-600 text-sm leading-relaxed mb-6">
+        <div class="p-5 md:p-8">
+          <h3 class="text-sm md:text-xl font-black text-slate-900 mb-3 tracking-tight group-hover:text-blue-600 transition-colors leading-tight">Content Strategy & Design</h3>
+          <p class="text-slate-600 text-[11px] md:text-sm leading-relaxed mb-6">
             Increased monthly engagement by <span class="text-blue-600 font-bold">25%</span> through 13 high-impact Instagram posts and stories.
           </p>
           <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-50">
@@ -748,16 +667,16 @@
         </div>
       </div>
 
-      <div class="project-item cursor-pointer group relative bg-white rounded-[2.5rem] border border-slate-200 overflow-hidden shadow-[0_15px_40px_-15px_rgba(0,0,0,0.08)] hover:shadow-[0_40px_80px_-20px_rgba(37,99,235,0.15)] hover:border-blue-400 transition-all duration-700 ease-out" data-category="video">
-        <div class="relative h-56 overflow-hidden">
+      <div class="project-item cursor-pointer group relative bg-white rounded-[1.5rem] md:rounded-[2.5rem] border border-slate-200 overflow-hidden shadow-[0_15px_40px_-15px_rgba(0,0,0,0.08)] hover:shadow-[0_40px_80px_-20px_rgba(37,99,235,0.15)] hover:border-blue-400 transition-all duration-700 ease-out" data-category="video">
+        <div class="relative h-40 md:h-56 overflow-hidden">
           <img src="./Pictures/video_project.jpg" alt="Video Editing Project" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" loading="lazy">
           <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-bold text-slate-900 border border-white/50 shadow-sm">
             Video Production
           </div>
         </div>
-        <div class="p-8">
-          <h3 class="text-xl font-black text-slate-900 mb-3 tracking-tight group-hover:text-blue-600 transition-colors">Short-Form Ad Campaign</h3>
-          <p class="text-slate-600 text-sm leading-relaxed mb-6">
+        <div class="p-5 md:p-8">
+          <h3 class="text-sm md:text-xl font-black text-slate-900 mb-3 tracking-tight group-hover:text-blue-600 transition-colors leading-tight">Short-Form Ad Campaign</h3>
+          <p class="text-slate-600 text-[11px] md:text-sm leading-relaxed mb-6">
             Edited high-conversion promotional videos for Facebook/Instagram ads, focusing on <span class="text-blue-600 font-bold">audience retention</span>.
           </p>
           <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-50">
@@ -766,16 +685,16 @@
         </div>
       </div>
 
-      <div class="project-item cursor-pointer group relative bg-white rounded-[2.5rem] border border-slate-200 overflow-hidden shadow-[0_15px_40px_-15px_rgba(0,0,0,0.08)] hover:shadow-[0_40px_80px_-20px_rgba(37,99,235,0.15)] hover:border-blue-400 transition-all duration-700 ease-out" data-category="social-media">
-        <div class="relative h-56 overflow-hidden">
+      <div class="project-item cursor-pointer group relative bg-white rounded-[1.5rem] md:rounded-[2.5rem] border border-slate-200 overflow-hidden shadow-[0_15px_40px_-15px_rgba(0,0,0,0.08)] hover:shadow-[0_40px_80px_-20px_rgba(37,99,235,0.15)] hover:border-blue-400 transition-all duration-700 ease-out" data-category="social-media">
+        <div class="relative h-40 md:h-56 overflow-hidden">
           <img src="./Pictures/socialmedia_project.jpg" alt="Social Media Management" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" loading="lazy">
           <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-bold text-slate-900 border border-white/50 shadow-sm">
             Management
           </div>
         </div>
-        <div class="p-8">
-          <h3 class="text-xl font-black text-slate-900 mb-3 tracking-tight group-hover:text-blue-600 transition-colors">Cross-Platform Growth</h3>
-          <p class="text-slate-600 text-sm leading-relaxed mb-6">
+        <div class="p-5 md:p-8">
+          <h3 class="text-sm md:text-xl font-black text-slate-900 mb-3 tracking-tight group-hover:text-blue-600 transition-colors leading-tight">Cross-Platform Growth</h3>
+          <p class="text-slate-600 text-[11px] md:text-sm leading-relaxed mb-6">
             Managed multi-channel content scheduling, driving a <span class="text-blue-600 font-bold">30% growth</span> in engagement over 90 days.
           </p>
           <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-50">
@@ -785,16 +704,16 @@
         </div>
       </div>
 
-      <div class="project-item cursor-pointer group relative bg-white rounded-[2.5rem] border border-slate-200 overflow-hidden shadow-[0_15px_40px_-15px_rgba(0,0,0,0.08)] hover:shadow-[0_40px_80px_-20px_rgba(37,99,235,0.15)] hover:border-blue-400 transition-all duration-700 ease-out" data-category="admin">
-        <div class="relative h-56 overflow-hidden">
+      <div class="project-item cursor-pointer group relative bg-white rounded-[1.5rem] md:rounded-[2.5rem] border border-slate-200 overflow-hidden shadow-[0_15px_40px_-15px_rgba(0,0,0,0.08)] hover:shadow-[0_40px_80px_-20px_rgba(37,99,235,0.15)] hover:border-blue-400 transition-all duration-700 ease-out" data-category="admin">
+        <div class="relative h-40 md:h-56 overflow-hidden">
           <img src="./Pictures/administrative_project.jpg" alt="Administrative Support Project" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" loading="lazy">
           <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-bold text-slate-900 border border-white/50 shadow-sm">
             Operations
           </div>
         </div>
-        <div class="p-8">
-          <h3 class="text-xl font-black text-slate-900 mb-3 tracking-tight group-hover:text-blue-600 transition-colors">Executive Admin Support</h3>
-          <p class="text-slate-600 text-sm leading-relaxed mb-6">
+        <div class="p-5 md:p-8">
+          <h3 class="text-sm md:text-xl font-black text-slate-900 mb-3 tracking-tight group-hover:text-blue-600 transition-colors leading-tight">Executive Admin Support</h3>
+          <p class="text-slate-600 text-[11px] md:text-sm leading-relaxed mb-6">
             Streamlined workflow efficiency through complex calendar management and <span class="text-blue-600 font-bold">automation</span> of email correspondence.
           </p>
           <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-50">
@@ -804,16 +723,16 @@
         </div>
       </div>
 
-      <div class="project-item cursor-pointer group relative bg-white rounded-[2.5rem] border border-slate-200 overflow-hidden shadow-[0_15px_40px_-15px_rgba(0,0,0,0.08)] hover:shadow-[0_40px_80px_-20px_rgba(37,99,235,0.15)] hover:border-blue-400 transition-all duration-700 ease-out" data-category="design">
-        <div class="relative h-56 overflow-hidden">
+      <div class="project-item cursor-pointer group relative bg-white rounded-[1.5rem] md:rounded-[2.5rem] border border-slate-200 overflow-hidden shadow-[0_15px_40px_-15px_rgba(0,0,0,0.08)] hover:shadow-[0_40px_80px_-20px_rgba(37,99,235,0.15)] hover:border-blue-400 transition-all duration-700 ease-out" data-category="design">
+        <div class="relative h-40 md:h-56 overflow-hidden">
           <img src="./Pictures/graphic_design.jpg" alt="Brand Identity Design" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" loading="lazy">
           <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-bold text-slate-900 border border-white/50 shadow-sm">
             Design
           </div>
         </div>
-        <div class="p-8">
-          <h3 class="text-xl font-black text-slate-900 mb-3 tracking-tight group-hover:text-blue-600 transition-colors">Brand Identity Design</h3>
-          <p class="text-slate-600 text-sm leading-relaxed mb-6">
+        <div class="p-5 md:p-8">
+          <h3 class="text-sm md:text-xl font-black text-slate-900 mb-3 tracking-tight group-hover:text-blue-600 transition-colors leading-tight">Brand Identity Design</h3>
+          <p class="text-slate-600 text-[11px] md:text-sm leading-relaxed mb-6">
             Created a cohesive visual identity including logo, color palette, and typography for a startup, enhancing <span class="text-blue-600 font-bold">brand recognition</span>.
           </p>
           <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-50">
@@ -845,82 +764,82 @@
             </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div class="grid grid-cols-3 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-10">
             
-            <div class="group relative bg-white p-10 rounded-[3rem] border border-slate-200 shadow-[0_20px_50px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_40px_80px_-20px_rgba(37,99,235,0.12)] hover:border-blue-400 hover:-translate-y-3 transition-all duration-700 ease-out">
-                <div class="flex gap-1 mb-8">
-                    <span class="text-yellow-400 text-sm">★★★★★</span>
+            <div onclick="openTestimonialModal(this)" class="group relative bg-white p-3 md:p-10 rounded-2xl md:rounded-[3rem] border border-slate-200 shadow-[0_20px_50px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_40px_80px_-20px_rgba(37,99,235,0.12)] hover:border-blue-400 hover:-translate-y-3 transition-all duration-700 ease-out cursor-pointer h-full flex flex-col justify-between">
+                <div class="flex gap-0.5 md:gap-1 mb-3 md:mb-8">
+                    <span class="text-yellow-400 text-[10px] md:text-sm">★★★★★</span>
                 </div>
                 
                 <div class="relative">
-                    <span class="absolute -top-10 -left-6 text-9xl text-slate-50 font-serif leading-none select-none group-hover:text-blue-50/50 transition-colors duration-500 italic">“</span>
+                    <span class="hidden md:block absolute -top-10 -left-6 text-9xl text-slate-50 font-serif leading-none select-none group-hover:text-blue-50/50 transition-colors duration-500 italic">“</span>
                     
-                    <p class="relative z-10 text-xl font-bold text-slate-900 leading-snug tracking-tight">
+                    <p class="tm-quote relative z-10 text-[10px] md:text-xl font-bold text-slate-900 leading-tight md:leading-snug tracking-tight line-clamp-3 md:line-clamp-none">
                         "Glester has been an amazing Virtual Assistant. He manages tasks efficiently and ensures deadlines are met with great attention to detail."
                     </p>
-                    <p class="mt-6 text-slate-500 leading-relaxed text-[15px]">
+                    <p class="tm-text mt-2 md:mt-6 text-slate-500 leading-relaxed text-[9px] md:text-[15px] line-clamp-2 md:line-clamp-none">
                         From handling administrative duties to organizing my calendar, his work allows me to focus on growth without worry.
                     </p>
                 </div>
 
-                <div class="flex items-center mt-12 pt-8 border-t border-slate-50">
-                    <img class="w-14 h-14 mr-4 rounded-2xl object-cover border-4 border-white shadow-md ring-1 ring-slate-100"
+                <div class="flex flex-col md:flex-row items-start md:items-center mt-4 md:mt-12 pt-3 md:pt-8 border-t border-slate-50 gap-2 md:gap-4">
+                    <img class="tm-img w-8 h-8 md:w-14 md:h-14 rounded-full md:rounded-2xl object-cover border-2 md:border-4 border-white shadow-md ring-1 ring-slate-100"
                          src="https://as2.ftcdn.net/v2/jpg/02/85/39/19/1000_F_285391990_6Ya03nBqFWfh94koGtAAQlIeWteZUIDR.jpg" alt="Paul Olaes" loading="lazy">
                     <div>
-                        <p class="font-black text-slate-900 text-base tracking-tight leading-none">Paul Olaes</p>
-                        <p class="text-[10px] text-blue-600 font-black uppercase tracking-[0.15em] mt-2">Founder, Bright Homes Realty</p>
+                        <p class="tm-name font-black text-slate-900 text-[9px] md:text-base tracking-tight leading-none">Paul Olaes</p>
+                        <p class="tm-role text-[7px] md:text-[10px] text-blue-600 font-black uppercase tracking-wider md:tracking-[0.15em] mt-1 md:mt-2 truncate max-w-[80px] md:max-w-none">Founder, Bright Homes Realty</p>
                     </div>
                 </div>
             </div>
 
-            <div class="group relative bg-white p-10 rounded-[3rem] border border-slate-200 shadow-[0_20px_50px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_40px_80px_-20px_rgba(37,99,235,0.12)] hover:border-blue-400 hover:-translate-y-3 transition-all duration-700 ease-out">
-                <div class="flex gap-1 mb-8">
-                    <span class="text-yellow-400 text-sm">★★★★★</span>
+            <div onclick="openTestimonialModal(this)" class="group relative bg-white p-3 md:p-10 rounded-2xl md:rounded-[3rem] border border-slate-200 shadow-[0_20px_50px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_40px_80px_-20px_rgba(37,99,235,0.12)] hover:border-blue-400 hover:-translate-y-3 transition-all duration-700 ease-out cursor-pointer h-full flex flex-col justify-between">
+                <div class="flex gap-0.5 md:gap-1 mb-3 md:mb-8">
+                    <span class="text-yellow-400 text-[10px] md:text-sm">★★★★★</span>
                 </div>
                 
                 <div class="relative">
-                    <span class="absolute -top-10 -left-6 text-9xl text-slate-50 font-serif leading-none select-none group-hover:text-blue-50/50 transition-colors duration-500 italic">“</span>
+                    <span class="hidden md:block absolute -top-10 -left-6 text-9xl text-slate-50 font-serif leading-none select-none group-hover:text-blue-50/50 transition-colors duration-500 italic">“</span>
                     
-                    <p class="relative z-10 text-xl font-bold text-slate-900 leading-snug tracking-tight">
+                    <p class="tm-quote relative z-10 text-[10px] md:text-xl font-bold text-slate-900 leading-tight md:leading-snug tracking-tight line-clamp-3 md:line-clamp-none">
                         "Glester’s support with social media and content creation has been invaluable. His creativity and reliability stand out."
                     </p>
-                    <p class="mt-6 text-slate-500 leading-relaxed text-[15px]">
+                    <p class="tm-text mt-2 md:mt-6 text-slate-500 leading-relaxed text-[9px] md:text-[15px] line-clamp-2 md:line-clamp-none">
                         He consistently delivers quality work on time and helps streamline my business processes, making operations much smoother.
                     </p>
                 </div>
 
-                <div class="flex items-center mt-12 pt-8 border-t border-slate-50">
-                    <img class="w-14 h-14 mr-4 rounded-2xl object-cover border-4 border-white shadow-md ring-1 ring-slate-100"
+                <div class="flex flex-col md:flex-row items-start md:items-center mt-4 md:mt-12 pt-3 md:pt-8 border-t border-slate-50 gap-2 md:gap-4">
+                    <img class="tm-img w-8 h-8 md:w-14 md:h-14 rounded-full md:rounded-2xl object-cover border-2 md:border-4 border-white shadow-md ring-1 ring-slate-100"
                          src="https://media.craiyon.com/2025-04-23/L6QzKgbpQLGMTaoFefuxqA.webp" alt="Jonathan Fawley" loading="lazy">
                     <div>
-                        <p class="font-black text-slate-900 text-base tracking-tight leading-none">Jonathan Fawley</p>
-                        <p class="text-[10px] text-blue-600 font-black uppercase tracking-[0.15em] mt-2">CEO, Creative Ventures</p>
+                        <p class="tm-name font-black text-slate-900 text-[9px] md:text-base tracking-tight leading-none">Jonathan Fawley</p>
+                        <p class="tm-role text-[7px] md:text-[10px] text-blue-600 font-black uppercase tracking-wider md:tracking-[0.15em] mt-1 md:mt-2 truncate max-w-[80px] md:max-w-none">CEO, Creative Ventures</p>
                     </div>
                 </div>
             </div>
 
-            <div class="group relative bg-white p-10 rounded-[3rem] border border-slate-200 shadow-[0_20px_50px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_40px_80px_-20px_rgba(37,99,235,0.12)] hover:border-blue-400 hover:-translate-y-3 transition-all duration-700 ease-out">
-                <div class="flex gap-1 mb-8">
-                    <span class="text-yellow-400 text-sm">★★★★★</span>
+            <div onclick="openTestimonialModal(this)" class="group relative bg-white p-3 md:p-10 rounded-2xl md:rounded-[3rem] border border-slate-200 shadow-[0_20px_50px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_40px_80px_-20px_rgba(37,99,235,0.12)] hover:border-blue-400 hover:-translate-y-3 transition-all duration-700 ease-out cursor-pointer h-full flex flex-col justify-between">
+                <div class="flex gap-0.5 md:gap-1 mb-3 md:mb-8">
+                    <span class="text-yellow-400 text-[10px] md:text-sm">★★★★★</span>
                 </div>
                 
                 <div class="relative">
-                    <span class="absolute -top-10 -left-6 text-9xl text-slate-50 font-serif leading-none select-none group-hover:text-blue-50/50 transition-colors duration-500 italic">“</span>
+                    <span class="hidden md:block absolute -top-10 -left-6 text-9xl text-slate-50 font-serif leading-none select-none group-hover:text-blue-50/50 transition-colors duration-500 italic">“</span>
                     
-                    <p class="relative z-10 text-xl font-bold text-slate-900 leading-snug tracking-tight">
+                    <p class="tm-quote relative z-10 text-[10px] md:text-xl font-bold text-slate-900 leading-tight md:leading-snug tracking-tight line-clamp-3 md:line-clamp-none">
                         "Glester is highly professional and detail-oriented. His assistance with communications is outstanding."
                     </p>
-                    <p class="mt-6 text-slate-500 leading-relaxed text-[15px]">
+                    <p class="tm-text mt-2 md:mt-6 text-slate-500 leading-relaxed text-[9px] md:text-[15px] line-clamp-2 md:line-clamp-none">
                         Thanks to his support, I have more time to focus on strategy and growth, knowing that daily operations are in capable hands.
                     </p>
                 </div>
 
-                <div class="flex items-center mt-12 pt-8 border-t border-slate-50">
-                    <img class="w-14 h-14 mr-4 rounded-2xl object-cover border-4 border-white shadow-md ring-1 ring-slate-100"
+                <div class="flex flex-col md:flex-row items-start md:items-center mt-4 md:mt-12 pt-3 md:pt-8 border-t border-slate-50 gap-2 md:gap-4">
+                    <img class="tm-img w-8 h-8 md:w-14 md:h-14 rounded-full md:rounded-2xl object-cover border-2 md:border-4 border-white shadow-md ring-1 ring-slate-100"
                          src="https://image.cdn2.seaart.ai/2023-09-15/17246151220700165/967931897e983abf5d867a88e6faa0d74791ba5f_high.webp" alt="Ketly Jean Pierre" loading="lazy">
                     <div>
-                        <p class="font-black text-slate-900 text-base tracking-tight leading-none">Ketly Jean Pierre</p>
-                        <p class="text-[10px] text-blue-600 font-black uppercase tracking-[0.15em] mt-2">Marketing Manager, TrendyCo</p>
+                        <p class="tm-name font-black text-slate-900 text-[9px] md:text-base tracking-tight leading-none">Ketly Jean Pierre</p>
+                        <p class="tm-role text-[7px] md:text-[10px] text-blue-600 font-black uppercase tracking-wider md:tracking-[0.15em] mt-1 md:mt-2 truncate max-w-[80px] md:max-w-none">Marketing Manager, TrendyCo</p>
                     </div>
                 </div>
             </div>
@@ -1205,6 +1124,9 @@
                 <div id="lightbox-tags" class="flex flex-wrap gap-2">
                     <!-- Tags injected here -->
                 </div>
+                <button onclick="closeLightbox()" class="md:hidden w-full mt-8 py-3 bg-slate-100 text-slate-600 font-bold rounded-xl hover:bg-slate-200 transition-colors uppercase text-xs tracking-widest">
+                    Close Project
+                </button>
             </div>
         </div>
     </div>
@@ -1289,6 +1211,23 @@
     </div>
 </div>
 
+<!-- Testimonial Modal -->
+<div id="testimonial-modal" class="fixed inset-0 z-[130] hidden opacity-0 transition-all duration-500 flex items-center justify-center p-4">
+    <div class="absolute inset-0 bg-slate-900/80 backdrop-blur-md" onclick="closeTestimonialModal()"></div>
+    <div id="testimonial-modal-content" class="relative w-full max-w-2xl bg-white rounded-[2rem] shadow-2xl p-8 md:p-12 transform scale-95 transition-all duration-500 flex flex-col max-h-[90vh] overflow-y-auto">
+        <button onclick="closeTestimonialModal()" class="absolute top-6 right-6 w-10 h-10 flex items-center justify-center rounded-full bg-slate-100 text-slate-500 hover:bg-red-50 hover:text-red-500 transition-all z-10">&times;</button>
+        
+        <div class="flex flex-col items-center text-center">
+            <img id="tm-modal-img" src="" alt="Client" class="w-20 h-20 rounded-full object-cover border-4 border-white shadow-lg mb-6">
+            <div class="mb-8">
+                <h3 id="tm-modal-name" class="text-2xl font-black text-slate-900 leading-tight"></h3>
+                <p id="tm-modal-role" class="text-sm text-blue-600 font-bold uppercase tracking-widest mt-1"></p>
+            </div>
+            <h4 id="tm-modal-quote" class="text-xl md:text-2xl font-bold text-slate-900 mb-6 leading-snug"></h4>
+            <p id="tm-modal-text" class="text-slate-600 leading-relaxed text-base md:text-lg"></p>
+        </div>
+    </div>
+</div>
 
       <script src="script.js"></script>
 </body>

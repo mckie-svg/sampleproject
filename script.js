@@ -382,4 +382,36 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => lightbox.classList.add('hidden'), 500);
     };
     document.querySelectorAll('.project-item').forEach(item => item.addEventListener('click', () => window.openLightbox(item)));
+
+    // Testimonial Modal
+    window.openTestimonialModal = (card) => {
+        const modal = document.getElementById('testimonial-modal');
+        const content = document.getElementById('testimonial-modal-content');
+        
+        document.getElementById('tm-modal-quote').innerText = card.querySelector('.tm-quote').innerText.replace(/^"|"$/g, '');
+        document.getElementById('tm-modal-text').innerText = card.querySelector('.tm-text').innerText;
+        document.getElementById('tm-modal-name').innerText = card.querySelector('.tm-name').innerText;
+        document.getElementById('tm-modal-role').innerText = card.querySelector('.tm-role').innerText;
+        document.getElementById('tm-modal-img').src = card.querySelector('.tm-img').src;
+
+        modal.classList.remove('hidden');
+        setTimeout(() => {
+            modal.classList.add('opacity-100');
+            content.classList.remove('scale-95');
+            content.classList.add('scale-100');
+        }, 10);
+        document.body.style.overflow = 'hidden';
+    };
+
+    window.closeTestimonialModal = () => {
+        const modal = document.getElementById('testimonial-modal');
+        const content = document.getElementById('testimonial-modal-content');
+        modal.classList.remove('opacity-100');
+        content.classList.remove('scale-100');
+        content.classList.add('scale-95');
+        setTimeout(() => {
+            modal.classList.add('hidden');
+            document.body.style.overflow = '';
+        }, 500);
+    };
 ;
