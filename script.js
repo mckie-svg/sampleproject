@@ -213,7 +213,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 time: new Date().toLocaleString(),
             };
 
-            emailjs.send('service_vbqnk58', 'template_aekxfsl', params, 'YcueGlES5XY04shEy')
+            emailjs.send('service_pradcsj', 'template_dnpgvsi', params, 'YcueGlES5XY04shEy')
                 .then(() => {
                     btn.innerText = 'Message Sent!';
                     contactForm.reset();
